@@ -1,0 +1,27 @@
+{
+	"compilerOptions": {
+		//куда идет сборка, но мы собираем через webpack
+		"outDir": "./dist/",
+		//Подсвечивает места без типа
+		"noImplicitAny": true,
+		//Модульная система
+		"module": "ESNext",
+		//весия es в которую комплириуем код
+		"target": "es5",
+		"jsx": "react-jsx",
+		//разрешаем компилятору обрабатывать не только ts, но и js для конструкций типа jsx <div onClick=()>
+		"allowJs": true,
+		"moduleResolution": "node",
+		//Для абсолютного импорта
+//		"baseUrl": "",
+		//Позволяет работать с пакетами, которые используют require, как с обычными пакетами через import
+		"esModuleInterop": true,
+		//Поддежрка export default для node библиотек, что-бы не писать import * as...
+		"allowSyntheticDefaultImports": true
+	},
+	"ts-node": {
+		"compilerOptions": {
+			"module": "CommonJS"
+		}
+	}
+}
