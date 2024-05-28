@@ -13,7 +13,10 @@
 		"allowJs": true,
 		"moduleResolution": "node",
 		//Для абсолютного импорта
-//		"baseUrl": "",
+		"baseUrl": ".",
+		"paths": {
+			"*": ["./src/*"]
+		},
 		//Позволяет работать с пакетами, которые используют require, как с обычными пакетами через import
 		"esModuleInterop": true,
 		//Поддежрка export default для node библиотек, что-бы не писать import * as...
