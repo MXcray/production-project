@@ -1,4 +1,5 @@
 :root {
+	// Шрифты
 	--font-family-main: Consolas, "Times New Roman", sans-serif;
 
 	--font-size-m: 16px;
@@ -11,4 +12,6 @@
 
 	// Размеры
 	--navbar-height: 50px;
+	--navbar-width: 300px;
+	--navbar-width-colapsed: 80px;
 }
