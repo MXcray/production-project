@@ -26,7 +26,10 @@ module.exports = {
 		'react/jsx-indent': [2, "tab"],
 		'react/jsx-indent-props': [2, "tab"],
 		indent: [2, "tab"],
-		'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
+		'react/jsx-filename-extension': [
+			2,
+			{ extensions: ['.js', '.jsx', '.tsx'] }
+		],
 		'import/no-unresolved': 'off',
 		'import/prefer-default-export': 'off',
 		'no-unused-vars': 'warn',
