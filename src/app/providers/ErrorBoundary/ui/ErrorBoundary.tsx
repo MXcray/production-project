@@ -1,5 +1,3 @@
-import { types } from "sass";
-import Error = types.Error;
 import React, { ErrorInfo, ReactNode, Suspense } from "react";
 import { PageError } from "widgets/PageError";
 
@@ -33,13 +31,11 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
 		if (hasError) {
 			// You can render any custom fallback UI
 			return (
-				<Suspense fallback={''}>
+				<Suspense fallback={' '}>
 					<PageError />
 				</Suspense>
 			);
-
 		}
-
 		return children;
 	}
 }
