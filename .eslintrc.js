@@ -6,9 +6,10 @@ module.exports = {
 	},
 	extends: [
 		'plugin:react/recommended',
+		// 'airbnb',
 		'plugin:i18next/recommended',
-		'plugin:storybook/recommended',
-		'plugin:storybook/recommended'
+		// 'plugin:storybook/recommended',
+		// 'plugin:storybook/recommended'
 	],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
@@ -21,15 +22,15 @@ module.exports = {
 	plugins: [
 		'react',
 		'@typescript-eslint',
-		'i18next'
+		'i18next',
 	],
 	rules: {
-		'react/jsx-indent': [2, "tab"],
-		'react/jsx-indent-props': [2, "tab"],
-		indent: [2, "tab"],
+		'react/jsx-indent': [2, 'tab'],
+		'react/jsx-indent-props': [2, 'tab'],
+		indent: [2, 'tab'],
 		'react/jsx-filename-extension': [
 			2,
-			{ extensions: ['.js', '.jsx', '.tsx'] }
+			{ extensions: ['.js', '.jsx', '.tsx'] },
 		],
 		'import/no-unresolved': 'off',
 		'import/prefer-default-export': 'off',
@@ -47,10 +48,11 @@ module.exports = {
 			'error',
 			{
 				markupOnly: true,
-				ignoreAttribute: ['data-testid', 'to',]
+				ignoreAttribute: ['data-testid', 'to'],
 			},
 		],
 		'max-len': ['error', { code: 100, ignoreComments: true }],
+		'no-tabs': 0,
 	},
 	globals: {
 		__IS_DEV__: true,
@@ -60,7 +62,7 @@ module.exports = {
 			files: ['**/src/**/*.test.{ts,tsx}'],
 			rules: {
 				'i18next/no-literal-string': 'off',
-			}
-		}
-	]
+			},
+		},
+	],
 };
