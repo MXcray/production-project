@@ -23,6 +23,7 @@ module.exports = {
 		'react',
 		'@typescript-eslint',
 		'i18next',
+		'react-hooks'
 	],
 	rules: {
 		'react/jsx-indent': [2, 'tab'],
@@ -54,15 +55,18 @@ module.exports = {
 		'max-len': ['error', { code: 100, ignoreComments: true }],
 		'no-tabs': 0,
 		'number-leading-zero': 0,
+		'react-hooks/rules-of-hooks': 'error',
+		'react-hooks/exhaustive-deps': 'error',
 	},
 	globals: {
 		__IS_DEV__: true,
 	},
 	overrides: [
 		{
-			files: ['**/src/**/*.test.{ts,tsx}'],
+			files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
 			rules: {
 				'i18next/no-literal-string': 'off',
+				'max-len': 'off',
 			},
 		},
 	],
