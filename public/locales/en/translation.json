@@ -10,5 +10,7 @@
 	"Главная": "Main",
 	"О сайте": "About us",
 	"Переключить": "Переключить",
-	"Коротий язык": "En"
+	"Коротий язык": "En",
+	"increment": "increment",
+	"decrement": "decrement"
 }
