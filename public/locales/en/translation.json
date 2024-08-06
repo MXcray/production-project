@@ -7,11 +7,16 @@
 	"Произошла непредвиденная ошибка": "Unexpected error has occurred",
 	"Перезагрузить страницу": "Reload page",
 	"Throw error": "Throw error",
+	"Войти": "Sign in",
+	"Выйти": "logout",
 	"Главная": "Main",
 	"О сайте": "About us",
-	"Переключить": "Переключить",
+	"Переключить": "Toggle",
 	"Коротий язык": "En",
 	"increment": "increment",
 	"decrement": "decrement",
-	"Введите пароль": "Введите пароль"
+	"Введите username": "Enter username",
+	"Введите пароль": "Enter password",
+	"Форма авторизации": "Authorization form",
+	"Неверный логин или пароль": "Wrong login or password"
 }
