@@ -52,13 +52,14 @@ module.exports = {
 				ignoreAttribute: ['data-testid', 'to'],
 			},
 		],
-		'max-len': ['error', { code: 100, ignoreComments: true }],
+		'max-len': ['error', { code: 120, ignoreComments: true }],
 		'no-tabs': 0,
 		'number-leading-zero': 0,
 		'react-hooks/rules-of-hooks': 'error',
 		'react-hooks/exhaustive-deps': 'error',
 		'no-param-reassign': 'off',
-		'react/display-name': 'off'
+		'react/display-name': 'off',
+		'i18next/no-literal-string': 'off'
 	},
 	globals: {
 		__IS_DEV__: true,
