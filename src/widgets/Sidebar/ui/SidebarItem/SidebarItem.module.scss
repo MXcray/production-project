@@ -1,0 +1,25 @@
+.item {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-top: 10px;
+
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+.link {
+	display: block;
+	transition: 0.2s;
+}
+
+.icon {
+	fill: var(--inverted-primary-color);
+}
+
+.collapsed {
+	.link {
+		display: none;
+	}
+}

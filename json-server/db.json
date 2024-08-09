@@ -15,6 +15,13 @@
 		}
 	],
 	"profile": {
-		"name": "typicode"
+		"first": "Антон",
+		"lastname": "Уразаев",
+		"age": 21,
+		"currency": "RUB",
+		"country": "Russia",
+		"city": "Izhevsk",
+		"username": "admin",
+		"avatar": "https://forum-ru-cdn.warthunder.com/original/3X/a/f/af62d76a2d92797df0711e6a94d319490936f3a1.jpeg"
 	}
 }
