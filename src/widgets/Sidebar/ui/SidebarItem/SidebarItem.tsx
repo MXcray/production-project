@@ -6,7 +6,7 @@ import React, { memo } from "react";
 import { SidebarItemType } from "../../model/items";
 
 interface SidebarItemProps {
-	item?: SidebarItemType,
+	item: SidebarItemType,
 	collapsed: boolean,
 	// Icon: React.VFC<React.SVGProps<SVGSVGElement>>
 }

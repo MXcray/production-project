@@ -11,6 +11,7 @@
 		"jsx": "react-jsx",
 		//разрешаем компилятору обрабатывать не только ts, но и js для конструкций типа jsx <div onClick=()>
 		"allowJs": true,
+		"strict": true,
 		"moduleResolution": "node",
 		//Для абсолютного импорта
 		"baseUrl": ".",
