@@ -18,14 +18,14 @@ export function buildPlugins({ paths, isDev, apiUrl }: BuildOptions): webpack.We
 		}),
 		new webpack.DefinePlugin({
 			__IS_DEV__: JSON.stringify(isDev),
-		}),
-		new webpack.DefinePlugin({
 			__API__: JSON.stringify(apiUrl),
 		}),
+		// new webpack.DefinePlugin({
+		// }),
 	];
 
 	if (isDev) {
-		plugins.push(new ReactRefreshWebpackPlugin());
+		// plugins.push(new ReactRefreshWebpackPlugin());
 		plugins.push(new webpack.HotModuleReplacementPlugin());
 		plugins.push(new BundleAnalyzerPlugin({
 			openAnalyzer: false,
