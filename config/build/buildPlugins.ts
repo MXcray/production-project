@@ -5,7 +5,7 @@ import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { BuildOptions } from './types/config';
 
-export function buildPlugins({ paths, isDev, apiUrl }: BuildOptions): webpack.WebpackPluginInstance[] {
+export function buildPlugins({ paths, isDev, apiUrl, project }: BuildOptions): webpack.WebpackPluginInstance[] {
 	const plugins = [
 		// Вставляет ссылку на банлд в наш шаблон html из public
 		new HtmlWebpackPlugin({
@@ -19,6 +19,7 @@ export function buildPlugins({ paths, isDev, apiUrl }: BuildOptions): webpack.We
 		new webpack.DefinePlugin({
 			__IS_DEV__: JSON.stringify(isDev),
 			__API__: JSON.stringify(apiUrl),
+			__PROJECT__: JSON.stringify(project),
 		}),
 		// new webpack.DefinePlugin({
 		// }),
