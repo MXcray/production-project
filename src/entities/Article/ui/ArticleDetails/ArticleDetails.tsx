@@ -22,7 +22,6 @@ import { ArticleBlock, ArticleBlockType } from "../../model/types/article";
 import { ArticleTextBlockComponent } from "entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent";
 import { ArticleImageBlockComponent } from "entities/Article/ui/ArticleImageBlockComponent/ArticleImageBlockComponent";
 import { ArticleCodeBlockComponent } from "entities/Article/ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent";
-import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 
 interface ArticleDetailsProps {
 	className?: string;
@@ -121,7 +120,7 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
 	}
 
 	return (
-		<DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+		<DynamicModuleLoader reducers={reducers} removeAfterUnmount >
 			<div className={classNames(cls.ArticleDetails, {}, [className])}>
 				{content}
 			</div>
