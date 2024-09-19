@@ -3,6 +3,7 @@ import { Article, ArticleView } from "./model/types/article";
 import { ArticleDetailsSchema } from "./model/types/articleDetailsSchema";
 import { fetchArticleById } from "./model/services/fetchArticleById/fetchArticleById";
 import { ArticleList } from "./ui/ArticleList/ArticleList";
+import { ArticleViewSelector } from "./ui/ArticleViewSelector/ArticleViewSelector";
 
 export {
 	ArticleDetails,
@@ -11,4 +12,5 @@ export {
 	fetchArticleById,
 	ArticleList,
 	ArticleView,
+	ArticleViewSelector,
 }
