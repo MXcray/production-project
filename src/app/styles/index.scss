@@ -17,11 +17,3 @@ body {
 .content-page {
 	display: flex;
 }
-
-.page-wrapper {
-	flex: 0 1 auto;
-	padding: 15px 15px 15px 40px;
-	height: calc(100vh - var(--navbar-height));
-	overflow-y: auto;
-	width: 100%;
-}

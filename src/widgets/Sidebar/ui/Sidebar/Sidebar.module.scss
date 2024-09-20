@@ -4,7 +4,10 @@
 	background-color: var(--inverted-bg-color);
 	position: relative;
 	transition: width 0.3s;
-	flex: 1 0 auto;
+
+	// flex: 1 0 auto;
+	flex-shrink: 1;
+	flex-basis: auto;
 }
 
 .items {
