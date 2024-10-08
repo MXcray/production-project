@@ -14,7 +14,7 @@ import {
 	getArticlesPageIsLoading,
 	getArticlesPageView
 } from "../../model/selectors/articlesPageSelectors";
-import { Page } from "shared/ui/Page/Page";
+import { Page } from "widgets/Page/Page";
 import { fetchNextArticlePage } from "../../model/services/fetchNextArticlePage/fetchNextArticlePage";
 import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlePage";
 
@@ -58,7 +58,8 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
 				<ArticleList
 					isLoading={isLoading}
 					view={view}
-					articles={articles} />
+					articles={articles}
+				/>
 			</Page>
 		</DynamicModuleLoader>
 	);

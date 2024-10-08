@@ -6,6 +6,7 @@ import { createReducerManager } from "app/providers/StoreProvider/config/reducer
 import { $api } from "shared/api/api";
 import { To } from 'history';
 import { NavigateOptions } from "react-router";
+import { UIReducer } from "features/UI";
 
 export function createReduxStore(
 	initialState?: StateSchema,
@@ -15,6 +16,7 @@ export function createReduxStore(
 		...asyncReducers,
 		counter: counterReducer,
 		user: userReducer,
+		ui: UIReducer,
 	}
 
 	const reducerManager = createReducerManager(rootReducers);
