@@ -7,10 +7,11 @@ import { AxiosInstance } from "axios";
 import { To } from "history";
 import { NavigateOptions } from "react-router";
 import { ArticleDetailsSchema } from "entities/Article";
-import { ArticleDetailsCommentSchema } from "pages/ArticleDetailsPage";
+import { ArticleDetailsCommentSchema, ArticleDetailsRecommendationsSchema } from "pages/ArticleDetailsPage";
 import { AddNewCommentSchema } from "features/addNewCommnt";
 import { ArticlesPageSchema } from "pages/ArticlesPage";
 import { UISchema } from "features/UI";
+import { ArticleDetailsPageSchema } from "pages/ArticleDetailsPage/model/types";
 
 export interface StateSchema {
 	counter: CounterSchema;
@@ -20,9 +21,9 @@ export interface StateSchema {
 	profile?: ProfileSchema;
 	loginForm?: LoginSchema;
 	articleDetails?: ArticleDetailsSchema;
-	articleDetailsComments?: ArticleDetailsCommentSchema;
 	addNewComment?: AddNewCommentSchema;
 	articlesPage?: ArticlesPageSchema;
+	articleDetailsPage?: ArticleDetailsPageSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
