@@ -1,8 +1,3 @@
-import { FC, lazy } from "react";
-import { addNewCommentProps } from "./AddNewComment";
+import { lazy } from "react";
 
-export const addNewCommentAsync = lazy<FC<addNewCommentProps>>(() => new Promise(resolve => {
-	// @ts-ignore
-	// Для теста setTimeout
-	setTimeout(() => resolve(import('./AddNewComment')), 1500)
-}))
+export const addNewCommentAsync = lazy(() => import('./AddNewComment'));

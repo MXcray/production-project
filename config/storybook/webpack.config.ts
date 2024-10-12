@@ -4,6 +4,7 @@ import { BuildPaths } from "../build/types/config";
 import { buildCssLoader } from "../build/loaders/buildCssLoader";
 
 export default ({ config }: {config: webpack.Configuration}) => {
+	// @ts-ignore
 	const paths: BuildPaths = {
 		build: '',
 		html: '',
