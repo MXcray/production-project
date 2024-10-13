@@ -12,7 +12,7 @@ export default (env: BuildEnv) => {
 		src: path.resolve(__dirname, 'src'),
 		locales: path.resolve(__dirname, 'public', 'locales'),
 		buildLocales: path.resolve(__dirname, 'build', 'locales'),
-	}
+	};
 
 	const mode = env.mode || 'development';
 	const PORT = env.port || 3000;
@@ -28,7 +28,7 @@ export default (env: BuildEnv) => {
 		port: PORT,
 		apiUrl,
 		project: 'frontend',
-	})
+	});
 
-	return config
+	return config;
 };

@@ -17,6 +17,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
 			path: paths.build,
 			clean: true,
 			publicPath: '/',
+			// publicPath: 'auto',
 		},
 		plugins: buildPlugins(options),
 		module: {

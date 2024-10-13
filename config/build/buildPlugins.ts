@@ -25,8 +25,8 @@ export function buildPlugins({ paths, isDev, apiUrl, project }: BuildOptions): w
 		new CopyPlugin({
 			patterns: [
 				{ from: paths.locales, to: paths.buildLocales },
-			]
-		})
+			],
+		}),
 	];
 
 	if (isDev) {
