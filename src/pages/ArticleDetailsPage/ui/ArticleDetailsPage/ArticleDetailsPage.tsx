@@ -20,10 +20,10 @@ import { getArticleRecommendationsIsLoading } from "../../model/selectors/recomm
 import {
 	fetchArticleRecommendations
 } from "../../model/services/fetchArticleRecommendations/fetchArticleRecommendations";
-import { articleDetailsPageReducer } from "pages/ArticleDetailsPage/model/slice";
+import { articleDetailsPageReducer } from "../../model/slice";
 import {
 	ArticleDetailsPageHeader
-} from "pages/ArticleDetailsPage/ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader";
+} from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 
 interface ArticleDetailsPageProps {
 	className?: string;

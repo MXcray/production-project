@@ -19,9 +19,9 @@ import ViewIcon from "shared/assets/icons/views.svg";
 import DateIcon from "shared/assets/icons/date.svg";
 import { Icon } from "shared/ui/Icon/Icon";
 import { ArticleBlock, ArticleBlockType } from "../../model/types/article";
-import { ArticleTextBlockComponent } from "entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent";
-import { ArticleImageBlockComponent } from "entities/Article/ui/ArticleImageBlockComponent/ArticleImageBlockComponent";
-import { ArticleCodeBlockComponent } from "entities/Article/ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent";
+import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
+import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
+import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 
 interface ArticleDetailsProps {
 	className?: string;

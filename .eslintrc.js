@@ -28,7 +28,8 @@ module.exports = {
 		'react',
 		'@typescript-eslint',
 		'i18next',
-		'react-hooks'
+		'react-hooks',
+	  	'anton-plugin',
 	],
 	rules: {
 		'react/jsx-indent': [2, 'tab'],
@@ -66,6 +67,7 @@ module.exports = {
 		'react/display-name': 'off',
 		'i18next/no-literal-string': 'off',
 		'no-undef': 'off',
+	  	'anton-plugin/path-checker': 'error',
 	},
 	globals: {
 		__IS_DEV__: true,

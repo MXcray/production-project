@@ -4,7 +4,7 @@ import { Article } from "entities/Article";
 import { ArticleDetailsRecommendationsSchema } from '../types/ArticleDetailsRecommendationsSchema';
 import {
 	fetchArticleRecommendations
-} from "pages/ArticleDetailsPage/model/services/fetchArticleRecommendations/fetchArticleRecommendations";
+} from "../../model/services/fetchArticleRecommendations/fetchArticleRecommendations";
 
 const initialState: ArticleDetailsRecommendationsSchema = {
 	error: undefined,

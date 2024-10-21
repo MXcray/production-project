@@ -1,4 +1,3 @@
-
 import { classNames } from "shared/lib/classNames/classNames";
 import cls from './Page.module.scss';
 import { memo, MutableRefObject, ReactNode, useRef, UIEvent } from "react";

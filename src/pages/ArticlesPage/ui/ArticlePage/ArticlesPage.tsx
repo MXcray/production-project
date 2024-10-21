@@ -17,8 +17,7 @@ import {
 import { Page } from "widgets/Page/Page";
 import { fetchNextArticlePage } from "../../model/services/fetchNextArticlePage/fetchNextArticlePage";
 import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlePage";
-import { ArticlePageFilters } from "pages/ArticlesPage/ui/ArticlePageFilters/ArticlePageFilters";
-import { Text, TextAlign, TextSize } from "shared/ui/Text/Text";
+import { ArticlePageFilters } from "../ArticlePageFilters/ArticlePageFilters";
 import { useSearchParams } from "react-router-dom";
 
 interface ArticlesPageProps {

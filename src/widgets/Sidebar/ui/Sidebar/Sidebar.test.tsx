@@ -1,5 +1,5 @@
 import { fireEvent, screen } from "@testing-library/react";
-import { Sidebar } from "widgets/Sidebar";
+import { Sidebar } from "../Sidebar/Sidebar";
 import { componentRender } from "shared/lib/tests/componentRender/componentRender";
 
 describe('Sidebar', () => {
@@ -15,5 +15,4 @@ describe('Sidebar', () => {
 		fireEvent.click(toggleBtn);
 		expect(screen.getByTestId('sidebar')).toHaveClass('collapsed');
 	});
-
 });
