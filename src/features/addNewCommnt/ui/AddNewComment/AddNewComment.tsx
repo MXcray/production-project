@@ -12,6 +12,7 @@ import {
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { addNewCommentActions, addNewCommentReducer } from "../../model/slices/addNewCommentSlice";
 import { DynamicModuleLoader, ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { HStack } from "shared/ui/stack";
 
 export interface addNewCommentProps {
 	className?: string;
@@ -44,7 +45,7 @@ const addNewComment = memo((props: addNewCommentProps) => {
 
 	return (
 		<DynamicModuleLoader reducers={reducers}>
-			<div className={classNames(cls.addNewComment, {}, [className])}>
+			<HStack justify={'between'} max className={classNames(cls.addNewComment, {}, [className])}>
 				<Input
 					className={cls.input}
 					placeholder={t('Введите текст коментария')}
@@ -57,7 +58,7 @@ const addNewComment = memo((props: addNewCommentProps) => {
 				>
 					{t('Отправить')}
 				</Button>
-			</div>
+			</HStack>
 		</DynamicModuleLoader>
 	);
 });
