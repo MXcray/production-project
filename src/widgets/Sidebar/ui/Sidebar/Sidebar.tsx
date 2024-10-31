@@ -33,33 +33,33 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
   )), [collapsed, sidebarItemsList]);
 
   return (
-	<aside
-	  data-testid="sidebar"
-	  className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}
-	>
-	  <Button
-			data-testid="sidebar-toggle"
-			onClick={onCollapsed}
-			className={cls.collapseBtn}
-			theme={ButtonTheme.BACKGROUND_INVERTED}
-			size={ButtonSize.L}
-			square
-			>
-			{collapsed ? '>' : '<'}
-	  </Button>
-
-	  <VStack
-			role={'navigation'}
-			gap={'8'}
-			className={cls.items}
+		<aside
+			data-testid="sidebar"
+			className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}
 		>
-			{itemsList}
-	  </VStack>
+			<Button
+				data-testid="sidebar-toggle"
+				onClick={onCollapsed}
+				className={cls.collapseBtn}
+				theme={ButtonTheme.BACKGROUND_INVERTED}
+				size={ButtonSize.L}
+				square
+				>
+				{collapsed ? '>' : '<'}
+			</Button>
 
-	  <div className={cls.switchers}>
-			<ThemeSwitcher />
-			<LangSwitcher short={collapsed} className={cls.lang}/>
-	  </div>
-	</aside>
+			<VStack
+				role={'navigation'}
+				gap={'8'}
+				className={cls.items}
+			>
+				{itemsList}
+			</VStack>
+
+			<div className={cls.switchers}>
+				<ThemeSwitcher />
+				<LangSwitcher short={collapsed} className={cls.lang}/>
+			</div>
+		</aside>
   );
 });

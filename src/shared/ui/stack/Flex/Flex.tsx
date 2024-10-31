@@ -8,7 +8,7 @@ export type FlexDirection = 'row' | 'column';
 export type FlexGap = '4' | '8' | '16' | '32';
 
 const justifyClasses: Record<FlexJustify, string> = {
-  start: cls.justifyStart,
+	start: cls.justifyStart,
   center: cls.justifyCenter,
   end: cls.justifyEnd,
   between: cls.justifyBetween,
