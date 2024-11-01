@@ -29,7 +29,7 @@ export const CountrySelect = memo(({ className, value, onChange, readonly }: Cou
 
 	return (
 		<ListBox
-			className={classNames('', {[cls.readonly]: readonly}, [className])}
+			className={classNames('', { [cls.readonly]: readonly }, [className])}
 			value={value}
 			defaultValue={t('Укажите страну')}
 			label={t('Укажите страну')}

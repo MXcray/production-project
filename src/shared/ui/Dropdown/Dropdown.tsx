@@ -3,7 +3,7 @@ import cls from './Dropdown.module.scss';
 import { classNames } from "shared/lib/classNames/classNames";
 import { Fragment, ReactNode } from "react";
 import { DropdownDirection } from "shared/types/ui";
-import { AppLink } from "shared/ui/AppLink/AppLink";
+import { AppLink } from "../AppLink/AppLink";
 
 export interface DropdownItem {
  disabled?: boolean;
