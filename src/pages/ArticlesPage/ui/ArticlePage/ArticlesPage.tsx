@@ -7,7 +7,7 @@ import { DynamicModuleLoader, ReducersList } from "shared/lib/components/Dynamic
 import { articlesPageReducer, getArticles } from "../../model/slices/articlePageSlice";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
 	getArticlesPageError,
 	getArticlesPageInited,
@@ -19,6 +19,7 @@ import { fetchNextArticlePage } from "../../model/services/fetchNextArticlePage/
 import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlePage";
 import { ArticlePageFilters } from "../ArticlePageFilters/ArticlePageFilters";
 import { useSearchParams } from "react-router-dom";
+import { ArticleInfiniteList } from "pages/ArticlesPage/ui/ArticleInfiniteList/ArticleInfiniteList";
 
 interface ArticlesPageProps {
 	className?: string;
@@ -32,11 +33,6 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
 
 	const { t } = useTranslation('article');
 	const dispatch = useAppDispatch();
-	const articles = useSelector(getArticles.selectAll);
-	const view = useSelector(getArticlesPageView);
-	const isLoading = useSelector(getArticlesPageIsLoading);
-	const error = useSelector(getArticlesPageError);
-	const inited = useSelector(getArticlesPageInited);
 	const [searchParams] = useSearchParams();
 
 	const onLoadNextPart = useCallback(() => {
@@ -54,12 +50,7 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
 				className={classNames(cls.ArticlesPage, {}, [className])}
 			>
 				<ArticlePageFilters />
-				<ArticleList
-					isLoading={isLoading}
-					view={view}
-					articles={articles}
-					className={cls.list}
-				/>
+				<ArticleInfiniteList className={cls.list} />
 			</Page>
 		</DynamicModuleLoader>
 	);

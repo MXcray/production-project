@@ -6,7 +6,7 @@ import MainPage from "./MainPage";
 import { Theme } from "app/providers/ThemeProvider";
 
 export default {
-	title: 'page/MainPage',
+	title: 'pages/MainPage',
 	component: MainPage,
 	argTypes: {
 		backgroundColor: { control: 'color' },

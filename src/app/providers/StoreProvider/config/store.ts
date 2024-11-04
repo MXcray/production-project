@@ -7,6 +7,7 @@ import { $api } from "shared/api/api";
 import { To } from 'history';
 import { NavigateOptions } from "react-router";
 import { UIReducer } from "features/UI";
+import { rtkApi } from "shared/api/rtkApi";
 
 export function createReduxStore(
 	initialState?: StateSchema,
@@ -17,6 +18,7 @@ export function createReduxStore(
 		counter: counterReducer,
 		user: userReducer,
 		ui: UIReducer,
+		[rtkApi.reducerPath]: rtkApi.reducer,
 	}
 
 	const reducerManager = createReducerManager(rootReducers);
@@ -33,7 +35,7 @@ export function createReduxStore(
 			thunk: {
 				extraArgument: extraArg,
 			}
-		})
+		}).concat(rtkApi.middleware),
 	})
 
 	//@ts-ignore

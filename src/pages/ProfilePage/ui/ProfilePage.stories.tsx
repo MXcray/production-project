@@ -10,7 +10,7 @@ import { Currency } from "entities/Currency";
 import avatar from "shared/assets/tests/storybook.jpeg";
 
 export default {
-	title: 'page/ProfilePage',
+	title: 'pages/ProfilePage',
 	component: ProfilePage,
 	argTypes: {
 		backgroundColor: { control: 'color' },

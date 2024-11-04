@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ProfileCard } from "./ProfileCard";
@@ -6,7 +7,7 @@ import { Currency } from "entities/Currency";
 import avatar from "shared/assets/tests/storybook.jpeg";
 
 export default {
-	title: 'entity/ProfileCard',
+	title: 'entities/ProfileCard',
 	component: ProfileCard,
 	argTypes: {
 		backgroundColor: { control: 'color' },
