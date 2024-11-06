@@ -63,7 +63,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 							onClick: onLogout,
 						},
 					]}
-					trigger={<Avatar size={30} src={authData.avatar} />}
+					trigger={<Avatar size={30} src={authData.avatar}/>}
 				/>
 			</header>
 		)
