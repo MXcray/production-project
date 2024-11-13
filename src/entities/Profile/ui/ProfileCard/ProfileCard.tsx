@@ -50,7 +50,11 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
 	if (isLoading) {
 		return (
-			<HStack justify={'center'} max className={classNames(cls.ProfileCard, { [cls.loading]: true }, [className])}>
+			<HStack
+				justify={'center'}
+				max
+				className={classNames(cls.ProfileCard, { [cls.loading]: true }, [className])}
+			>
 				<Loader />
 			</HStack>
 		)
@@ -86,6 +90,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
 				className={cls.input}
 				readonly={readonly}
 				onChange={onChangeFirstname}
+				data-testid={'ProfileCard.firstname'}
 			/>
 			<Input
 				value={data?.lastname}
@@ -93,6 +98,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
 				className={cls.input}
 				readonly={readonly}
 				onChange={onChangeLastname}
+				data-testid={'ProfileCard.lastname'}
 			/>
 			<Input
 				value={data?.age}
@@ -134,6 +140,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
 				onChange={onChangeCountry}
 				readonly={readonly}
 			/>
-			</VStack>
+		</VStack>
 	);
 };
