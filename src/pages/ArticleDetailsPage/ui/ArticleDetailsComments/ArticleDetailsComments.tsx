@@ -1,6 +1,6 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
-import { memo, useCallback } from "react";
+import { memo, Suspense, useCallback } from "react";
 import { Text, TextSize } from "shared/ui/Text/Text";
 import { AddNewComment } from "features/addNewCommnt";
 import { CommentList } from "entities/Comment";
@@ -16,10 +16,11 @@ import {
 	fetchCommentsByArticleId
 } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { VStack } from "shared/ui/stack";
+import { Loader } from "shared/ui/Loader/Loader";
 
 interface ArticleDetailsCommentsProps {
 	className?: string;
-	id: string;
+	id?: string;
 }
 
 export const ArticleDetailsComments = memo(({ className, id }: ArticleDetailsCommentsProps) => {
@@ -43,7 +44,9 @@ export const ArticleDetailsComments = memo(({ className, id }: ArticleDetailsCom
 				size={TextSize.L}
 				title={t('Комментарии')}
 			/>
-			<AddNewComment onSendComment={onSendComment}/>
+			<Suspense fallback={<Loader />}>
+				<AddNewComment onSendComment={onSendComment}/>
+			</Suspense>
 			<CommentList
 				isLoading={commentsIsLoading}
 				comments={comments}

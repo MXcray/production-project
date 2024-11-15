@@ -24,7 +24,7 @@ import { VStack } from "shared/ui/stack";
 
 interface EditableProfileCardProps {
 	className?: string;
-	id: string;
+	id?: string;
 }
 
 const reducers: ReducersList = {

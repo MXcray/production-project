@@ -1,11 +1,13 @@
-
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { ThunkConfig } from "app/providers/StoreProvider";
 import { Article } from "../../types/article";
+import { Page } from "widgets/Page/Page";
+import { classNames } from "shared/lib/classNames/classNames";
+import cls from "pages/ArticleDetailsPage/ui/ArticleDetailsPage/ArticleDetailsPage.module.scss";
 
 export const fetchArticleById = createAsyncThunk<
 	Article,
-	string,
+	string | undefined,
 	ThunkConfig<string>
 >(
 	'article/fetchArticleById',
@@ -16,6 +18,10 @@ export const fetchArticleById = createAsyncThunk<
 		} = thunkAPI;
 
 		try {
+			if (!articleId) {
+				throw new Error('');
+			}
+
 			const response = await extra.api.get<Article>(`/articles/${articleId}`, {
 				params: {
 					_expand: 'user',

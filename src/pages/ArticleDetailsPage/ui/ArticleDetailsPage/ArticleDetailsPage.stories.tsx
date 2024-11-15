@@ -4,6 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import ArticleDetailsPage from './ArticleDetailsPage';
 import { Article } from "entities/Article";
 import { ArticleBlockType, ArticleType } from "entities/Article/model/types/article";
+import { StoreDecorator } from "shared/config/storybook/storeDecorator/StoreDecorator";
 
 export default {
 	title: 'pages/ArticleDetailsPage/ArticleDetailsPage',
@@ -91,3 +92,7 @@ const article: Article = {
 
 export const Normal = Template.bind({});
 Normal.args = {};
+
+Normal.decorators = [
+	StoreDecorator({})
+]

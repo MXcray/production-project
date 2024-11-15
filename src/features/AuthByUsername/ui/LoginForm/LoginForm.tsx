@@ -1,6 +1,5 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import cls from './LoginForm.module.scss';
-import { useTranslation } from "react-i18next";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import { Input } from "shared/ui/Input/Input";
 import { useSelector } from "react-redux";
@@ -14,6 +13,7 @@ import { getLoginIsLoading } from "../../model/selectors/getLoginIsLoading/getLo
 import { getLoginError } from "../../model/selectors/getLoginError/getLoginError";
 import { DynamicModuleLoader, ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { useTranslation } from "react-i18next";
 
 export interface LoginFormProps {
 	className?: string;
@@ -33,11 +33,11 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
 	const isLoading = useSelector(getLoginIsLoading);
 	const error = useSelector(getLoginError);
 
-	const onChangeUsername = useCallback((value) => {
+	const onChangeUsername = useCallback((value: string) => {
 		dispatch(loginActions.setUsername(value));
 	}, [dispatch]);
 
-	const onChangePassword = useCallback((value) => {
+	const onChangePassword = useCallback((value: string) => {
 		dispatch(loginActions.setPassword(value));
 	}, [dispatch]);
 

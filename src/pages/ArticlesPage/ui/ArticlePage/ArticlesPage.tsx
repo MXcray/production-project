@@ -1,25 +1,17 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import cls from './ArticlesPage.module.scss';
-import { useTranslation } from "react-i18next";
 import { memo, useCallback } from "react";
-import { ArticleList } from "entities/Article";
 import { DynamicModuleLoader, ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { articlesPageReducer, getArticles } from "../../model/slices/articlePageSlice";
+import { articlesPageReducer } from "../../model/slices/articlePageSlice";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { useDispatch, useSelector } from "react-redux";
-import {
-	getArticlesPageError,
-	getArticlesPageInited,
-	getArticlesPageIsLoading,
-	getArticlesPageView
-} from "../../model/selectors/articlesPageSelectors";
 import { Page } from "widgets/Page/Page";
 import { fetchNextArticlePage } from "../../model/services/fetchNextArticlePage/fetchNextArticlePage";
 import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlePage";
 import { ArticlePageFilters } from "../ArticlePageFilters/ArticlePageFilters";
 import { useSearchParams } from "react-router-dom";
 import { ArticleInfiniteList } from "pages/ArticlesPage/ui/ArticleInfiniteList/ArticleInfiniteList";
+import { useTranslation } from "react-i18next";
 
 interface ArticlesPageProps {
 	className?: string;
