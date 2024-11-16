@@ -21,7 +21,8 @@
 		//Позволяет работать с пакетами, которые используют require, как с обычными пакетами через import
 		"esModuleInterop": true,
 		//Поддежрка export default для node библиотек, что-бы не писать import * as...
-		"allowSyntheticDefaultImports": true
+		"allowSyntheticDefaultImports": true,
+		"isolatedModules": true,
 	},
 	"ts-node": {
 		"compilerOptions": {

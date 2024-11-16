@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import React, { memo, useCallback, useMemo } from "react";
 import {
 	ArticleSortField,
-	ArticleSortSelector,
+	ArticleSortSelector, ArticleType,
 	ArticleTypeTabs,
 	ArticleView,
 	ArticleViewSelector
@@ -24,7 +24,6 @@ import { SortOrder } from "shared/types";
 import { fetchArticlesList } from "../../model/services/fetchArticlesList/fetchArticlesList";
 import { useDebounce } from "shared/lib/hooks/useDebounce/useDebounce";
 import { TabItem, Tabs } from "shared/ui/Tabs/Tabs";
-import { ArticleType } from "entities/Article/model/types/article";
 
 interface ArticlePageFiltersProps {
 	className?: string;

@@ -3,5 +3,5 @@ import { Comment } from './model/types/comments';
 
 export {
 	CommentList,
-	Comment
+	type Comment
 }

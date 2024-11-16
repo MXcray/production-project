@@ -44,11 +44,11 @@ export function Dropdown(props: DropdownProps) {
 			</Menu.Button>
 			<Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
 				{items.map((item) => {
-					const content = ({active}: {active: boolean}) => (
+					const content = ({ active }: {active: boolean}) => (
 						<button
 							type="button"
 							disabled={item.disabled}
-							className={classNames(cls.item, {[cls.active]: active})}
+							className={classNames(cls.item, { [cls.active]: active })}
 							onClick={item.onClick}
 						>
 							{item.content}
@@ -57,6 +57,7 @@ export function Dropdown(props: DropdownProps) {
 
 					if (item.href) {
 						return  (
+							// eslint-disable-next-line react/jsx-key
 							<Menu.Item as={AppLink} to={item.href} disabled={item.disabled}>
 								{content}
 							</Menu.Item>
@@ -64,6 +65,7 @@ export function Dropdown(props: DropdownProps) {
 					}
 
 					return (
+						// eslint-disable-next-line react/jsx-key
 						<Menu.Item as={Fragment} disabled={item.disabled}>
 							{content}
 						</Menu.Item>

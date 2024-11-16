@@ -3,7 +3,7 @@ import { UIActions, UIReducer } from "./model/slices/UISlice";
 import { UISchema } from "./model/types/UISchema";
 
 export {
-	UISchema,
+	type UISchema,
 	getUIScrollByPath,
 	UIReducer,
 	UIActions,

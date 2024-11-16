@@ -10,7 +10,7 @@ import { fetchNextArticlePage } from "../../model/services/fetchNextArticlePage/
 import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlePage";
 import { ArticlePageFilters } from "../ArticlePageFilters/ArticlePageFilters";
 import { useSearchParams } from "react-router-dom";
-import { ArticleInfiniteList } from "pages/ArticlesPage/ui/ArticleInfiniteList/ArticleInfiniteList";
+import { ArticleInfiniteList } from "../../ui/ArticleInfiniteList/ArticleInfiniteList";
 import { useTranslation } from "react-i18next";
 
 interface ArticlesPageProps {

@@ -1,4 +1,4 @@
-import { Listbox as HListBox} from '@headlessui/react'
+import { Listbox as HListBox } from '@headlessui/react'
 import { Fragment, ReactNode, useState } from 'react'
 import cls from './ListBox.module.scss';
 import { classNames, Mods } from "shared/lib/classNames/classNames";
@@ -48,7 +48,7 @@ export function ListBox(props: ListBoxProps) {
 		<HStack gap={'4'}>
 			{
 				label &&
-				<span className={classNames('', {[cls.readonly]: readonly}, [])}>
+				<span className={classNames('', { [cls.readonly]: readonly }, [])}>
 					{`${label}>`}
 				</span>
 			}
@@ -75,10 +75,10 @@ export function ListBox(props: ListBoxProps) {
 							disabled={item.disabled}
 							as={Fragment}
 						>
-							{({active, selected}) => (
+							{({ active, selected }) => (
 								<li
 									className={classNames(
-									cls.item,
+										cls.item,
 										{
 											[cls.active]: active,
 											[cls.disabled]: item.disabled,

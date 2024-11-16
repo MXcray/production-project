@@ -5,7 +5,7 @@ import { ArticleDetailsPageAsync as ArticleDetails } from "./ui/ArticleDetailsPa
 
 export {
 	ArticleDetails,
-	ArticleDetailsCommentSchema,
-	ArticleDetailsRecommendationsSchema,
-	ArticleDetailsPageSchema
+	type ArticleDetailsCommentSchema,
+	type ArticleDetailsRecommendationsSchema,
+	type ArticleDetailsPageSchema
 }

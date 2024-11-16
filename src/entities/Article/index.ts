@@ -1,5 +1,5 @@
 import { ArticleDetails } from "./ui/ArticleDetails/ArticleDetails"
-import { Article, ArticleSortField, ArticleType, ArticleView } from "./model/types/article";
+import { Article } from "./model/types/article";
 import { ArticleDetailsSchema } from "./model/types/articleDetailsSchema";
 import { fetchArticleById } from "./model/services/fetchArticleById/fetchArticleById";
 import { ArticleList } from "./ui/ArticleList/ArticleList";
@@ -7,16 +7,17 @@ import { ArticleViewSelector } from "./ui/ArticleViewSelector/ArticleViewSelecto
 import { ArticleSortSelector } from "./ui/ArticleSortSelector/ArticleSortSelector";
 import { ArticleTypeTabs } from "./ui/ArticleTypeTabs/ArticleTypeTabs";
 import { getArticleDetailsData } from "./model/selectors/articleDetails";
+import { ArticleSortField, ArticleType, ArticleView } from "./model/consts/articleConsts";
 
 export {
 	ArticleDetails,
-	Article,
-	ArticleDetailsSchema,
+	type Article,
+	type ArticleDetailsSchema,
 	fetchArticleById,
 	ArticleList,
-	ArticleView,
 	ArticleViewSelector,
 	ArticleSortSelector,
+	ArticleView,
 	ArticleSortField,
 	ArticleType,
 	ArticleTypeTabs,

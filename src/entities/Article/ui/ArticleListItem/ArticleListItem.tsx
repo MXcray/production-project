@@ -2,7 +2,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 import cls from './ArticleListItem.module.scss';
 import { useTranslation } from "react-i18next";
 import { HTMLAttributeAnchorTarget, memo, useCallback } from "react";
-import { Article, ArticleBlockType, ArticleTextBlock, ArticleView } from "../../model/types/article";
+import { Article, ArticleTextBlock } from "../../model/types/article";
 import { Text } from "shared/ui/Text/Text";
 import { Icon } from "shared/ui/Icon/Icon";
 import ViewIcon from "shared/assets/icons/views.svg";
@@ -14,6 +14,8 @@ import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleT
 import { useNavigate } from "react-router-dom";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import { AppLink } from "shared/ui/AppLink/AppLink";
+import { ArticleView } from "../../model/consts/articleConsts";
+import { ArticleBlockType } from "../../model/consts/articleConsts";
 
 interface ArticleListItemProps {
 	className?: string;

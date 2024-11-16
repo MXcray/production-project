@@ -22,7 +22,7 @@ const article: Article = {
 	img: '',
 	createdAt: '',
 	views: 123,
-	user: {id: '1', username: '123',},
+	user: { id: '1', username: '123', },
 	blocks: [],
 	type: [],
 	title: '123',
@@ -45,9 +45,9 @@ Normal.parameters = {
 			method: 'GET',
 			status: 200,
 			response: [
-				{...article, id: '1'},
-				{...article, id: '2'},
-				{...article, id: '3'},
+				{ ...article, id: '1' },
+				{ ...article, id: '2' },
+				{ ...article, id: '3' },
 			]
 		}
 	]
