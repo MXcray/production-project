@@ -3,8 +3,8 @@ import { AboutPage } from "pages/AboutPage";
 import { MainPage } from "pages/MainPage";
 import { NotFoundPage } from "pages/NotFoundPage";
 import { ProfilePage } from "pages/ProfilePage";
-import ArticlesPage from "pages/ArticlesPage/ui/ArticlePage/ArticlesPage";
-import ArticleDetailsPage from "pages/ArticleDetailsPage/ui/ArticleDetailsPage/ArticleDetailsPage";
+import { ArticlePage } from "pages/ArticlesPage";
+import { ArticleDetails } from "pages/ArticleDetailsPage";
 import { ArticleEditPage } from "pages/ArticleEditPage";
 import { AdminPanelPage } from "pages/AdminPanelPage";
 import { ForbiddenPage } from "pages/ForbiddenPage";
@@ -59,12 +59,12 @@ export const routeConfig: Record<AppRoutes, appRoutesProps> = {
 	},
 	[AppRoutes.ARTICLES]: {
 		path: RoutePath.articles,
-		element: <ArticlesPage />,
+		element: <ArticlePage />,
 		authOnly: true,
 	},
 	[AppRoutes.ARTICLE_DETAILS]: {
 		path: `${RoutePath.article_details}:id`,
-		element: <ArticleDetailsPage />,
+		element: <ArticleDetails />,
 		authOnly: true,
 	},
 	[AppRoutes.ARTICLE_EDIT]: {
