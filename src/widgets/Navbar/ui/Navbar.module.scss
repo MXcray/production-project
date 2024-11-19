@@ -12,7 +12,7 @@
 }
 
 .links,
-.dropdown{
+.actions{
 	height: 100%;
 	display: flex;
 	align-items: center;
@@ -29,4 +29,9 @@
 .appName {
 	width: calc(var(--navbar-width) - 30px);
 	margin-left: 15px;
+	color: var(--primary-color);
+}
+
+.createBtn {
+	color: #fff;
 }
