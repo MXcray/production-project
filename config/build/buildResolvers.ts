@@ -8,6 +8,8 @@ export function buildResolvers(options: BuildOptions): ResolveOptions {
 		modules: [options.paths.src, 'node_modules'],
 		mainFiles: ['index'],
 		// fallback: { fs: false }, //чинил storybook в оригинале нет
-		alias: {},
+		alias: {
+			'@': options.paths.src,
+		},
 	};
 }

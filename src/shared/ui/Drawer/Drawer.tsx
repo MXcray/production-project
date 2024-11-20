@@ -1,10 +1,10 @@
-import { useTheme } from "app/providers/ThemeProvider";
+import { useTheme } from "@/app/providers/ThemeProvider";
 import { memo, ReactNode, useCallback, useEffect } from "react";
-import { classNames, Mods } from "shared/lib/classNames/classNames";
+import { classNames, Mods } from "@/shared/lib/classNames/classNames";
 import cls from './Drawer.module.scss';
 import { Portal } from "../../ui/Portal/Portal";
 import { Overlay } from "../Overlay/Overlay";
-import { useAnimationLibs } from "shared/lib/components/AnimationProvider";
+import { useAnimationLibs } from "@/shared/lib/components/AnimationProvider";
 
 interface DrawerProps {
 	className?: string;
@@ -19,7 +19,7 @@ const height = window.innerHeight - 100;
 export const DrawerContent = memo((props: DrawerProps) => {
 
 	const { Spring, Gesture } = useAnimationLibs();
-	const [{y}, api] = Spring?.useSpring(() => ({y: height}));
+	const [{ y }, api] = Spring?.useSpring(() => ({ y: height }));
 	const { theme } = useTheme();
 
 	const {
@@ -31,7 +31,7 @@ export const DrawerContent = memo((props: DrawerProps) => {
 	} = props;
 
 	const openDrawer = useCallback(() => {
-		api.start({y: 0, immediate: false});
+		api.start({ y: 0, immediate: false });
 	}, [api])
 
 	useEffect(() => {
@@ -69,13 +69,13 @@ export const DrawerContent = memo((props: DrawerProps) => {
 					openDrawer();
 				}
 			} else {
-				api.start({y: my, immediate: true})
+				api.start({ y: my, immediate: true })
 			}
 		},
 		{
 			from: () => [0, y.get()],
 			filterTaps: true,
-			bounds: {top: 0},
+			bounds: { top: 0 },
 			rubberband: true,
 		},
 	);
@@ -103,7 +103,7 @@ export const DrawerContent = memo((props: DrawerProps) => {
 })
 
 export const Drawer = memo((props: DrawerProps) => {
-	const {isLoaded} = useAnimationLibs();
+	const { isLoaded } = useAnimationLibs();
 
 	if (!isLoaded) {
 		return null;

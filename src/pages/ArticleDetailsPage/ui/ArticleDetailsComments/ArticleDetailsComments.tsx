@@ -1,22 +1,22 @@
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import { memo, Suspense, useCallback } from "react";
-import { Text, TextSize } from "shared/ui/Text/Text";
-import { AddNewComment } from "features/addNewCommnt";
-import { CommentList } from "entities/Comment";
+import { Text, TextSize } from "@/shared/ui/Text/Text";
+import { AddNewComment } from "@/features/addNewCommnt";
+import { CommentList } from "@/entities/Comment";
 import { useSelector } from "react-redux";
 import { getArticleCommentsIsLoading } from "../../model/selectors/comments";
 import {
 	addNewCommentForArticle
 } from "../../model/services/addNewCommentForArticle/addNewCommentForArticle";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { getArticleComments } from "../../model/slice/articleDetailsCommentSlice";
-import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
 import {
 	fetchCommentsByArticleId
 } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
-import { VStack } from "shared/ui/stack";
-import { Loader } from "shared/ui/Loader/Loader";
+import { VStack } from "@/shared/ui/stack";
+import { Loader } from "@/shared/ui/Loader/Loader";
 
 interface ArticleDetailsCommentsProps {
 	className?: string;

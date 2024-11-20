@@ -1,9 +1,9 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { ThunkConfig } from "app/providers/StoreProvider";
+import { ThunkConfig } from "@/app/providers/StoreProvider";
 import { Article } from "../../types/article";
-import { Page } from "widgets/Page/Page";
-import { classNames } from "shared/lib/classNames/classNames";
-import cls from "pages/ArticleDetailsPage/ui/ArticleDetailsPage/ArticleDetailsPage.module.scss";
+import { Page } from "@/widgets/Page/Page";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import cls from "@/pages/ArticleDetailsPage/ui/ArticleDetailsPage/ArticleDetailsPage.module.scss";
 
 export const fetchArticleById = createAsyncThunk<
 	Article,
