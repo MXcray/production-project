@@ -14,6 +14,8 @@ import { Avatar } from "shared/ui/Avatar/Avatar";
 import { HStack } from "shared/ui/stack";
 import { NotificationButton } from "features/NotificationButton";
 import { AvatarDropdown } from "features/AvatarDropdown";
+import { Drawer } from "shared/ui/Drawer/Drawer";
+import { NotificationList } from "entities/Notification";
 
 interface NavbarProps {
 	className?: string;
