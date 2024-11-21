@@ -647,5 +647,44 @@
       "username": "user",
       "avatar": "https://i.pinimg.com/564x/d8/b1/c4/d8b1c4a62b80f8310aad578cf957f176.jpg"
     }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "articleId": "3",
+      "userId": "1",
+      "feedback": "123",
+      "rate": 3,
+      "id": "Ie6S5RZ"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хороший профиль",
+      "userId": "1",
+      "profileId": "2"
+    },
+    {
+      "profileId": "1",
+      "userId": "1",
+      "feedback": "Классный профиль",
+      "rate": 5,
+      "id": "BV3JTmG"
+    }
   ]
 }
