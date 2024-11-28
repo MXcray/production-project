@@ -67,7 +67,7 @@ module.exports = {
 		'react/display-name': 'off',
 		'i18next/no-literal-string': 'off',
 		'no-undef': 'off',
-	  	'anton-plugin/path-checker': 'error',
+		'anton-plugin/path-checker': ['error', { alias: '@' }],
 	},
 	globals: {
 		__IS_DEV__: true,
