@@ -2,12 +2,11 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import cls from './Page.module.scss';
 import { memo, MutableRefObject, ReactNode, useRef, UIEvent } from "react";
 import { useInfiniteScroll } from "@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { getUIScrollByPath, UIActions } from "@/features/UI";
 import { useLocation } from "react-router-dom";
 import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { getUIScroll } from "@/features/UI/model/selectors/ui";
 import { StateSchema } from "@/app/providers/StoreProvider";
 import { useThrottle } from "@/shared/lib/hooks/useThrottle/useThrottle";
 
@@ -16,6 +15,8 @@ interface PageProps {
 	children: ReactNode;
 	onScrollEnd?: () => void;
 }
+
+export const PAGE_ID = 'PAGE_ID';
 
 export const Page = memo((props: PageProps) => {
 	const {
@@ -51,6 +52,7 @@ export const Page = memo((props: PageProps) => {
 			ref={wrapperRef}
 			className={classNames(cls.Page, {}, [className])}
 			onScroll={onScroll}
+			id={PAGE_ID}
 		>
 			{children}
 			{onScrollEnd ? <div className={cls.trigger} ref={triggerRef}/> : null}

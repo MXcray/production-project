@@ -7,7 +7,7 @@ import { ArticleViewSelector } from "./ui/ArticleViewSelector/ArticleViewSelecto
 import { ArticleSortSelector } from "./ui/ArticleSortSelector/ArticleSortSelector";
 import { ArticleTypeTabs } from "./ui/ArticleTypeTabs/ArticleTypeTabs";
 import { getArticleDetailsData } from "./model/selectors/articleDetails";
-import { ArticleSortField, ArticleType, ArticleView } from "./model/consts/articleConsts";
+import { ArticleBlockType, ArticleSortField, ArticleType, ArticleView } from "./model/consts/articleConsts";
 
 export {
 	ArticleDetails,
@@ -22,4 +22,5 @@ export {
 	ArticleType,
 	ArticleTypeTabs,
 	getArticleDetailsData,
+	ArticleBlockType,
 }

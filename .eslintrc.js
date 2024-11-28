@@ -68,6 +68,7 @@ module.exports = {
 		'i18next/no-literal-string': 'off',
 		'no-undef': 'off',
 		'anton-plugin/path-checker': ['error', { alias: '@' }],
+		'anton-plugin/public-api-imports': ['error', { alias: '@' }],
 	},
 	globals: {
 		__IS_DEV__: true,
