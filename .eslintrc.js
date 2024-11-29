@@ -68,6 +68,12 @@ module.exports = {
 		'i18next/no-literal-string': 'off',
 		'no-undef': 'off',
 		'anton-plugin/path-checker': ['error', { alias: '@' }],
+		'anton-plugin/layer-imports': [
+			'error', {
+				alias: '@',
+				ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+			}
+		],
 		'anton-plugin/public-api-imports': [
 			'error', {
 				alias: '@',
