@@ -31,6 +31,7 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 - `npm run storybook:build` - Сборка storybook билда
 - `npm run prepare` - прекоммит хуки
 - `npm run generate:slice` - Скрипт для генерации FSD слайсов
+- `npm run postinstall` - Сброс кеша зависимостей
 
 ----
 
