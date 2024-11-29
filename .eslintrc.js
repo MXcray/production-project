@@ -29,11 +29,13 @@ module.exports = {
 		'@typescript-eslint',
 		'i18next',
 		'react-hooks',
-	  	'anton-plugin',
+		'anton-plugin',
+		'unused-imports',
 	],
 	rules: {
 		'react/jsx-indent': [2, 'tab'],
 		'react/jsx-indent-props': [2, 'tab'],
+		'unused-imports/no-unused-imports': 'error',
 		indent: [2, 'tab'],
 		'react/jsx-filename-extension': [
 			2,

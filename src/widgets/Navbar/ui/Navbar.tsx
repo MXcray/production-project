@@ -4,17 +4,13 @@ import cls from './Navbar.module.scss';
 import { useTranslation } from "react-i18next";
 import { Button, ButtonTheme } from "@/shared/ui/Button";
 import { LoginModal } from "@/features/AuthByUsername";
-import { useDispatch, useSelector } from "react-redux";
-import { getUserAuthData, isUserAdmin, isUserManager, userActions } from "@/entities/User";
+import { useSelector } from "react-redux";
+import { getUserAuthData } from "@/entities/User";
 import { Text, TextTheme } from "@/shared/ui/Text";
 import { AppLink, AppLinkTheme } from "@/shared/ui/AppLink";
-import { Dropdown } from "@/shared/ui/Popups";
-import { Avatar } from "@/shared/ui/Avatar";
 import { HStack } from "@/shared/ui/stack";
 import { NotificationButton } from "@/features/NotificationButton";
 import { AvatarDropdown } from "@/features/AvatarDropdown";
-import { Drawer } from "@/shared/ui/Drawer";
-import { NotificationList } from "@/entities/Notification";
 import { RoutePath } from "@/shared/const/router";
 
 interface NavbarProps {

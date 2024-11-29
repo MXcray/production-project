@@ -1,7 +1,6 @@
 import { classNames } from "@/shared/lib/classNames/classNames";
 import cls from './CountrySelect.module.scss';
 import { useTranslation } from "react-i18next";
-import { Select } from "@/shared/ui/Select";
 import { Country } from "../../model/types/country";
 import { memo, useCallback } from "react";
 import { ListBox } from "@/shared/ui/Popups";

@@ -1,5 +1,5 @@
 import { memo, ReactNode, useCallback, useEffect } from "react";
-import { classNames, Mods } from "@/shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import cls from './Drawer.module.scss';
 import { Portal } from "../../ui/Portal/Portal";
 import { Overlay } from "../Overlay/Overlay";
