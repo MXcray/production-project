@@ -12,10 +12,10 @@ import { Avatar } from "@/shared/ui/Avatar/Avatar";
 import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import { useNavigate } from "react-router-dom";
-import { RoutePath } from "@/shared/config/routeConfig/routeConfig";
 import { AppLink } from "@/shared/ui/AppLink/AppLink";
 import { ArticleView } from "../../model/consts/articleConsts";
 import { ArticleBlockType } from "../../model/consts/articleConsts";
+import { RoutePath } from "@/shared/const/router";
 
 interface ArticleListItemProps {
 	className?: string;
