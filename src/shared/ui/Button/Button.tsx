@@ -19,6 +19,9 @@ export enum ButtonSize {
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
 	className?: string;
 	theme?: ButtonTheme;
+	/**
+	 * Флаг, делающий кнопку квадратной
+	 */
 	square?: boolean;
 	size?: ButtonSize;
 	disabled?: boolean;
