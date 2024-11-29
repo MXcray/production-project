@@ -5,7 +5,7 @@ import ListIcon from '@/shared/assets/icons/list.svg';
 import TiledIcon from '@/shared/assets/icons/tiled.svg';
 import { Button, ButtonTheme } from "@/shared/ui/Button";
 import { Icon } from "@/shared/ui/Icon";
-import { ArticleView } from "../../model/consts/articleConsts";
+import { ArticleView } from "@/entities/Article";
 
 interface ArticleViewSelectorProps {
 	className?: string;
@@ -35,7 +35,7 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
 	const onClick = (newView: ArticleView) => () => {
 		onViewClick?.(newView);
 	};
-	
+
 	return (
 		<div className={classNames(cls.ArticleViewSelector, {}, [className])}>
 			{viewTypes.map((viewType) => (
