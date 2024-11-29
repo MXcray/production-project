@@ -12,12 +12,12 @@ import {
 	getArticleDetailsError,
 	getArticleDetailsIsLoading
 } from "../../model/selectors/articleDetails";
-import { Text, TextAlign, TextSize } from "@/shared/ui/Text/Text";
-import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
-import { Avatar } from "@/shared/ui/Avatar/Avatar";
+import { Text, TextAlign, TextSize } from "@/shared/ui/Text";
+import { Skeleton } from "@/shared/ui/Skeleton";
+import { Avatar } from "@/shared/ui/Avatar";
 import ViewIcon from "@/shared/assets/icons/views.svg";
 import DateIcon from "@/shared/assets/icons/date.svg";
-import { Icon } from "@/shared/ui/Icon/Icon";
+import { Icon } from "@/shared/ui/Icon";
 import { ArticleBlock } from "../../model/types/article";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";

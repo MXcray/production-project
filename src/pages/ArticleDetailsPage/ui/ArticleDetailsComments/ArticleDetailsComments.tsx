@@ -1,7 +1,7 @@
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import { memo, Suspense, useCallback } from "react";
-import { Text, TextSize } from "@/shared/ui/Text/Text";
+import { Text, TextSize } from "@/shared/ui/Text";
 import { AddNewComment } from "@/features/addNewCommnt";
 import { CommentList } from "@/entities/Comment";
 import { useSelector } from "react-redux";
@@ -16,7 +16,7 @@ import {
 	fetchCommentsByArticleId
 } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { VStack } from "@/shared/ui/stack";
-import { Loader } from "@/shared/ui/Loader/Loader";
+import { Loader } from "@/shared/ui/Loader";
 
 interface ArticleDetailsCommentsProps {
 	className?: string;
