@@ -622,6 +622,15 @@
         "MANAGER"
       ],
       "avatar": "https://i.pinimg.com/564x/d8/b1/c4/d8b1c4a62b80f8310aad578cf957f176.jpg"
+    },
+    {
+      "id": "4",
+      "username": "testuser",
+      "password": "123",
+      "roles": [
+        "ADMIN"
+      ],
+      "avatar": "https://i.pinimg.com/564x/d8/b1/c4/d8b1c4a62b80f8310aad578cf957f176.jpg"
     }
   ],
   "profile": [
