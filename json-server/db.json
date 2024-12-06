@@ -549,6 +549,19 @@
           ]
         }
       ]
+    },
+    {
+      "title": "Научная статья - Биология",
+      "subtitle": "БиологиЯ",
+      "img": "https://st.depositphotos.com/1554103/2410/i/450/depositphotos_24108857-stock-photo-ecology-eco-bio-enviroment-text.jpg",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "2wwVWjg"
     }
   ],
   "comments": [
@@ -622,6 +635,15 @@
         "MANAGER"
       ],
       "avatar": "https://i.pinimg.com/564x/d8/b1/c4/d8b1c4a62b80f8310aad578cf957f176.jpg"
+    },
+    {
+      "id": "4",
+      "username": "testuser",
+      "password": "123",
+      "roles": [
+        "ADMIN"
+      ],
+      "avatar": "https://i.pinimg.com/564x/d8/b1/c4/d8b1c4a62b80f8310aad578cf957f176.jpg"
     }
   ],
   "profile": [
@@ -645,6 +667,28 @@
       "country": "Russia",
       "city": "Izhevsk",
       "username": "user",
+      "avatar": "https://i.pinimg.com/564x/d8/b1/c4/d8b1c4a62b80f8310aad578cf957f176.jpg"
+    },
+    {
+      "id": "3",
+      "first": "Манагер",
+      "lastname": "Манагерович",
+      "age": 18,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Izhevsk",
+      "username": "manager",
+      "avatar": "https://i.pinimg.com/564x/d8/b1/c4/d8b1c4a62b80f8310aad578cf957f176.jpg"
+    },
+    {
+      "id": "4",
+      "first": "test",
+      "lastname": "user",
+      "age": 18,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Izhevsk",
+      "username": "testuser",
       "avatar": "https://i.pinimg.com/564x/d8/b1/c4/d8b1c4a62b80f8310aad578cf957f176.jpg"
     }
   ],
