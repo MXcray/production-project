@@ -1,7 +1,7 @@
 import { Article } from "../../../src/entities/Article";
 
 const defaultArticle = {
-	title: "Научная статья - Биология",
+	title: "TESTING ARTICLE",
 	subtitle: "БиологиЯ",
 	img: "https://st.depositphotos.com/1554103/2410/i/450/depositphotos_24108857" +
 		"-stock-photo-ecology-eco-bio-enviroment-text.jpg",
@@ -11,7 +11,8 @@ const defaultArticle = {
 	type: [
 		"SCIENCE"
 	],
-	blocks: []
+	blocks: [],
+	id: 'r9023j',
 };
 
 export const createArticle = (article?: Article) => {
@@ -20,11 +21,11 @@ export const createArticle = (article?: Article) => {
 		url: `http://localhost:8000/articles`,
 		headers: { Authorization: 'asdad' },
 		body: article ?? defaultArticle,
-	}).then(resp => resp.body);
+	}).then((resp) => resp.body);
 };
 
 export const removeArticle = (articleId: string) => {
-	cy.request({
+	return cy.request({
 	 method: 'DELETE',
 	 url: `http://localhost:8000/articles/${articleId}`,
 	 headers: { Authorization: 'asdad' },
