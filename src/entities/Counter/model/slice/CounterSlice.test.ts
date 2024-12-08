@@ -1,23 +1,28 @@
-import { counterReducer, counterActions } from "./CounterSlice";
-import { CounterSchema } from "../types/counterSchema";
+import { counterReducer, counterActions } from './CounterSlice';
+import { CounterSchema } from '../types/counterSchema';
 
 describe('CounterSlice', () => {
 	test('increment', () => {
 		const state: DeepPartial<CounterSchema> = {
-			value: 10
-		}
-		expect(counterReducer(state as CounterSchema, counterActions.increment())).toEqual({ value: 11 })
+			value: 10,
+		};
+		expect(
+			counterReducer(state as CounterSchema, counterActions.increment()),
+		).toEqual({ value: 11 });
 	});
 
 	test('decrement', () => {
 		const state: DeepPartial<CounterSchema> = {
-			value: 10
-		}
-		expect(counterReducer(state as CounterSchema, counterActions.decrement())).toEqual({ value: 9 })
+			value: 10,
+		};
+		expect(
+			counterReducer(state as CounterSchema, counterActions.decrement()),
+		).toEqual({ value: 9 });
 	});
 
 	test('empty state', () => {
-		expect(counterReducer(undefined, counterActions.increment())).toEqual({ value: 1 })
+		expect(counterReducer(undefined, counterActions.increment())).toEqual({
+			value: 1,
+		});
 	});
-
 });

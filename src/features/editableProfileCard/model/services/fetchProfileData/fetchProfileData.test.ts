@@ -1,7 +1,7 @@
-import { fetchProfileData } from "./fetchProfileData";
-import { TestAsyncThunk } from "@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk";
-import { Country } from "@/entities/Country";
-import { Currency } from "@/entities/Currency";
+import { fetchProfileData } from './fetchProfileData';
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
 
 const data = {
 	username: 'admin',
@@ -10,11 +10,10 @@ const data = {
 	first: 'ytrewq',
 	age: 21,
 	currency: Currency.RUB,
-	city: 'Izhevsk'
-}
+	city: 'Izhevsk',
+};
 
 describe('fetchProfileData.test', () => {
-
 	test('success', async () => {
 		const thunk = new TestAsyncThunk(fetchProfileData);
 		thunk.api.get.mockReturnValue(Promise.resolve({ data: data }));

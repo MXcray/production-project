@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Tabs } from './Tabs';
-import { action } from "@storybook/addon-actions";
+import { action } from '@storybook/addon-actions';
 
 export default {
 	title: 'shared/Tabs',

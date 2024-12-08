@@ -1,19 +1,22 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './LoginForm.module.scss';
-import { Button, ButtonTheme } from "@/shared/ui/Button";
-import { Input } from "@/shared/ui/Input";
-import { useSelector } from "react-redux";
-import React, { memo, useCallback } from "react";
-import { loginActions, loginReducer } from "../../model/slice/loginSlice";
-import { loginByUsername } from "../../model/services/loginByUsername/loginByUsername";
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Input } from '@/shared/ui/Input';
+import { useSelector } from 'react-redux';
+import React, { memo, useCallback } from 'react';
+import { loginActions, loginReducer } from '../../model/slice/loginSlice';
+import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import { Text, TextTheme } from '@/shared/ui/Text';
-import { getLoginUsername } from "../../model/selectors/getLoginUsername/getLoginUsername";
-import { getLoginPassword } from "../../model/selectors/getLoginPassword/getLoginPassword";
-import { getLoginIsLoading } from "../../model/selectors/getLoginIsLoading/getLoginIsLoading";
-import { getLoginError } from "../../model/selectors/getLoginError/getLoginError";
-import { DynamicModuleLoader, ReducersList } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { useTranslation } from "react-i18next";
+import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
+import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
+import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
+import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
+import {
+	DynamicModuleLoader,
+	ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useTranslation } from 'react-i18next';
 
 export interface LoginFormProps {
 	className?: string;
@@ -22,10 +25,9 @@ export interface LoginFormProps {
 
 const initialReducers: ReducersList = {
 	loginForm: loginReducer,
-}
+};
 
 const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
-
 	const { t } = useTranslation();
 	const dispatch = useAppDispatch();
 	const username = useSelector(getLoginUsername);
@@ -33,26 +35,34 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
 	const isLoading = useSelector(getLoginIsLoading);
 	const error = useSelector(getLoginError);
 
-	const onChangeUsername = useCallback((value: string) => {
-		dispatch(loginActions.setUsername(value));
-	}, [dispatch]);
+	const onChangeUsername = useCallback(
+		(value: string) => {
+			dispatch(loginActions.setUsername(value));
+		},
+		[dispatch],
+	);
 
-	const onChangePassword = useCallback((value: string) => {
-		dispatch(loginActions.setPassword(value));
-	}, [dispatch]);
+	const onChangePassword = useCallback(
+		(value: string) => {
+			dispatch(loginActions.setPassword(value));
+		},
+		[dispatch],
+	);
 
 	const onLoginClick = useCallback(async () => {
 		const result = await dispatch(loginByUsername({ username, password }));
 		if (result.meta.requestStatus === 'fulfilled') {
 			onSuccess();
 		}
-	}, [onSuccess, dispatch, password, username])
+	}, [onSuccess, dispatch, password, username]);
 
 	return (
 		<DynamicModuleLoader reducers={initialReducers} removeAfterUnmount={true}>
 			<div className={classNames(cls.LoginForm, {}, [className])}>
 				<Text title={t('Форма авторизации')} />
-				{error && <Text text={t('Неверный логин или пароль')} theme={TextTheme.ERROR} />}
+				{error && (
+					<Text text={t('Неверный логин или пароль')} theme={TextTheme.ERROR} />
+				)}
 				<Input
 					type="text"
 					className={cls.input}

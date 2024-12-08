@@ -1,9 +1,9 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AddNewCommentSchema } from '../types/addNewComment';
 
 const initialState: AddNewCommentSchema = {
 	text: '',
-	error: undefined
+	error: undefined,
 };
 
 export const addNewCommentSlice = createSlice({
@@ -12,8 +12,8 @@ export const addNewCommentSlice = createSlice({
 	reducers: {
 		setText: (state, action: PayloadAction<string>) => {
 			state.text = action.payload;
-		}
-	}
+		},
+	},
 	// },
 	// extraReducers: (builder) => {
 	// 	builder
@@ -29,7 +29,7 @@ export const addNewCommentSlice = createSlice({
 	// 			state.error = action.payload;
 	// 		})
 	// }
-})
+});
 
 // Action creators are generated for each case reducer function
 export const { actions: addNewCommentActions } = addNewCommentSlice;

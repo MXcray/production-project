@@ -1,9 +1,9 @@
-import { updateProfileData } from "./updateProfileData";
-import { TestAsyncThunk } from "@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk";
-import { Country } from "@/entities/Country";
-import { Currency } from "@/entities/Currency";
+import { updateProfileData } from './updateProfileData';
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
 
-import { ValidateProfileErrors } from "../../consts/consts";
+import { ValidateProfileErrors } from '../../consts/consts';
 
 const data = {
 	id: '1',
@@ -13,16 +13,15 @@ const data = {
 	first: 'ytrewq',
 	age: 21,
 	currency: Currency.RUB,
-	city: 'Izhevsk'
-}
+	city: 'Izhevsk',
+};
 
 describe('updateProfileData.test', () => {
-
 	test('success', async () => {
 		const thunk = new TestAsyncThunk(updateProfileData, {
 			profile: {
-				form: data
-			}
+				form: data,
+			},
 		});
 		thunk.api.put.mockReturnValue(Promise.resolve({ data: data }));
 		const result = await thunk.callThunk();
@@ -36,30 +35,26 @@ describe('updateProfileData.test', () => {
 		const thunk = new TestAsyncThunk(updateProfileData, {
 			profile: {
 				form: data,
-			}
+			},
 		});
 
 		thunk.api.put.mockReturnValue(Promise.resolve({ status: 403 }));
 		const result = await thunk.callThunk();
 
 		expect(result.meta.requestStatus).toBe('rejected');
-		expect(result.payload).toEqual([
-			ValidateProfileErrors.SERVER_ERROR
-		])
+		expect(result.payload).toEqual([ValidateProfileErrors.SERVER_ERROR]);
 	});
 
 	test('validate error', async () => {
 		const thunk = new TestAsyncThunk(updateProfileData, {
 			profile: {
 				form: { ...data, lastname: '' },
-			}
+			},
 		});
 
 		const result = await thunk.callThunk();
 
 		expect(result.meta.requestStatus).toBe('rejected');
-		expect(result.payload).toEqual([
-			ValidateProfileErrors.INCORRECT_USER_DATA
-		])
+		expect(result.payload).toEqual([ValidateProfileErrors.INCORRECT_USER_DATA]);
 	});
 });

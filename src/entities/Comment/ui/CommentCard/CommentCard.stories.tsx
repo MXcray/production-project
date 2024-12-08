@@ -11,15 +11,17 @@ export default {
 	},
 } as ComponentMeta<typeof CommentCard>;
 
-const Template: ComponentStory<typeof CommentCard> = (args) => <CommentCard {...args} />;
+const Template: ComponentStory<typeof CommentCard> = (args) => (
+	<CommentCard {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {
 	comment: {
 		id: '1',
 		user: { id: '1', username: 'Admin' },
-		text: 'Коментарий'
-	}
+		text: 'Коментарий',
+	},
 };
 
 export const isLoading = Template.bind({});
@@ -27,7 +29,7 @@ isLoading.args = {
 	comment: {
 		id: '1',
 		user: { id: '1', username: 'Admin' },
-		text: 'Коментарий'
+		text: 'Коментарий',
 	},
-	isLoading: true
+	isLoading: true,
 };

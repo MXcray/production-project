@@ -1,5 +1,3 @@
-import { AppImage } from "./AppImage";
+import { AppImage } from './AppImage';
 
-export {
-	AppImage,
-}
+export { AppImage };

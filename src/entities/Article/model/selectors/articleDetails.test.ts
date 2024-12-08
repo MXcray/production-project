@@ -1,54 +1,55 @@
-import { StateSchema } from "@/app/providers/StoreProvider";
-import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading } from "../../model/selectors/articleDetails";
+import { StateSchema } from '@/app/providers/StoreProvider';
+import {
+	getArticleDetailsData,
+	getArticleDetailsError,
+	getArticleDetailsIsLoading,
+} from '../../model/selectors/articleDetails';
 
 describe('articleDetails.test', () => {
 	test('should return data', () => {
-
 		const data = {
 			id: '1',
 			title: 'title',
-		}
+		};
 
 		const state: DeepPartial<StateSchema> = {
 			articleDetails: {
-				data
-			}
-		}
+				data,
+			},
+		};
 		expect(getArticleDetailsData(state as StateSchema)).toEqual(data);
 	});
 
 	test('should work with empty data', () => {
-		const state: DeepPartial<StateSchema> = {}
+		const state: DeepPartial<StateSchema> = {};
 		expect(getArticleDetailsData(state as StateSchema)).toEqual(undefined);
 	});
 
 	test('should return isLoading', () => {
-
 		const state: DeepPartial<StateSchema> = {
 			articleDetails: {
-				isLoading: true
-			}
-		}
+				isLoading: true,
+			},
+		};
 		expect(getArticleDetailsIsLoading(state as StateSchema)).toEqual(true);
 	});
 
 	test('should work with empty state isLoading', () => {
-		const state: DeepPartial<StateSchema> = {}
+		const state: DeepPartial<StateSchema> = {};
 		expect(getArticleDetailsIsLoading(state as StateSchema)).toEqual(false);
 	});
 
 	test('should return error', () => {
-
 		const state: DeepPartial<StateSchema> = {
 			articleDetails: {
-				error: 'error'
-			}
-		}
+				error: 'error',
+			},
+		};
 		expect(getArticleDetailsError(state as StateSchema)).toEqual('error');
 	});
 
 	test('should work with empty state error', () => {
-		const state: DeepPartial<StateSchema> = {}
+		const state: DeepPartial<StateSchema> = {};
 		expect(getArticleDetailsError(state as StateSchema)).toEqual(undefined);
 	});
 });

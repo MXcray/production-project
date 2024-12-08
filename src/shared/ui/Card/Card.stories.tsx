@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Card } from './Card';
-import { Text } from "../Text/Text";
+import { Text } from '../Text/Text';
 
 export default {
 	title: 'shared/Card',
@@ -15,5 +15,5 @@ const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {
-	children: <Text title="Title" text="Some text" />
+	children: <Text title="Title" text="Some text" />,
 };

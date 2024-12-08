@@ -1,4 +1,4 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
+import { classNames } from '@/shared/lib/classNames/classNames';
 import './Loader.scss';
 
 interface LoaderProps {
@@ -6,9 +6,12 @@ interface LoaderProps {
 }
 
 export const Loader = ({ className }: LoaderProps) => {
-
 	return (
-		<div className={classNames('loadingio-spinner-spin-nq4q5u6dq7r', {}, [className])}>
+		<div
+			className={classNames('loadingio-spinner-spin-nq4q5u6dq7r', {}, [
+				className,
+			])}
+		>
 			<div className="ldio-x2uulkbinbj">
 				<div>
 					<div></div>

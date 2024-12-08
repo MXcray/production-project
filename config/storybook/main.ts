@@ -3,9 +3,7 @@ import path from 'path';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
 
 export default {
-	stories: [
-		'../../src/**/*.stories.@(js|jsx|ts|tsx)',
-	],
+	stories: ['../../src/**/*.stories.@(js|jsx|ts|tsx)'],
 	addons: [
 		'@storybook/addon-links',
 		{
@@ -53,11 +51,13 @@ export default {
 		});
 		config!.module!.rules.push(buildCssLoader(true));
 
-		config!.plugins!.push(new DefinePlugin({
-			__IS_DEV__: JSON.stringify(true),
-			__API__: JSON.stringify('https://testapi.ru'),
-			__PROJECT__: JSON.stringify('storybook'),
-		}));
+		config!.plugins!.push(
+			new DefinePlugin({
+				__IS_DEV__: JSON.stringify(true),
+				__API__: JSON.stringify('https://testapi.ru'),
+				__PROJECT__: JSON.stringify('storybook'),
+			}),
+		);
 		// Return the altered config
 		return config;
 	},

@@ -1,8 +1,8 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './StarRating.module.scss';
-import { memo, useState } from "react";
-import { Icon } from "../../ui/Icon/Icon";
-import StarIcon from "@/shared/assets/icons/star.svg";
+import { memo, useState } from 'react';
+import { Icon } from '../../ui/Icon/Icon';
+import StarIcon from '@/shared/assets/icons/star.svg';
 
 interface StarRatingProps {
 	className?: string;
@@ -11,16 +11,10 @@ interface StarRatingProps {
 	selectedStars?: number;
 }
 
-const stars = [1 ,2 ,3 ,4, 5];
+const stars = [1, 2, 3, 4, 5];
 
 export const StarRating = memo((props: StarRatingProps) => {
-
-	const {
-		className,
-		selectedStars = 0,
-		size = 30,
-		onSelect,
-	} = props;
+	const { className, selectedStars = 0, size = 30, onSelect } = props;
 
 	const [currentStarsCount, setCurrentStarsCount] = useState(selectedStars);
 	const [isSelected, setIsSelected] = useState(Boolean(selectedStars));
@@ -29,13 +23,13 @@ export const StarRating = memo((props: StarRatingProps) => {
 		if (!isSelected) {
 			setCurrentStarsCount(starsCount);
 		}
-	}
+	};
 
 	const onLeave = () => {
 		if (!isSelected) {
 			setCurrentStarsCount(0);
 		}
-	}
+	};
 
 	const onClick = (starsCount: number) => () => {
 		if (!isSelected) {
@@ -43,16 +37,15 @@ export const StarRating = memo((props: StarRatingProps) => {
 			setCurrentStarsCount(starsCount);
 			setIsSelected(true);
 		}
-	}
+	};
 
 	return (
 		<div className={classNames(cls.StarRating, {}, [className])}>
 			{stars.map((starNumber) => (
 				<Icon
-					className={classNames(
-						cls.StarIcon,
-						{ [cls.selected]: isSelected },
-						[currentStarsCount >= starNumber ? cls.hovered : cls.normal])}
+					className={classNames(cls.StarIcon, { [cls.selected]: isSelected }, [
+						currentStarsCount >= starNumber ? cls.hovered : cls.normal,
+					])}
 					Svg={StarIcon}
 					key={starNumber}
 					height={size}

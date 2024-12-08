@@ -1,22 +1,22 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticleListItem.module.scss';
-import { useTranslation } from "react-i18next";
-import { HTMLAttributeAnchorTarget, memo } from "react";
-import { Article, ArticleTextBlock } from "../../model/types/article";
-import { Text } from "@/shared/ui/Text";
-import { Icon } from "@/shared/ui/Icon";
-import ViewIcon from "@/shared/assets/icons/views.svg";
-import { Card } from "@/shared/ui/Card";
-import { Avatar } from "@/shared/ui/Avatar";
-import { Button, ButtonTheme } from "@/shared/ui/Button";
-import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
-import { useNavigate } from "react-router-dom";
-import { AppLink } from "@/shared/ui/AppLink";
-import { ArticleView } from "../../model/consts/articleConsts";
-import { ArticleBlockType } from "../../model/consts/articleConsts";
-import { getRouteArticleDetails } from "@/shared/const/router";
-import { AppImage } from "@/shared/ui/AppImage";
-import { Skeleton } from "@/shared/ui/Skeleton";
+import { useTranslation } from 'react-i18next';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
+import { Article, ArticleTextBlock } from '../../model/types/article';
+import { Text } from '@/shared/ui/Text';
+import { Icon } from '@/shared/ui/Icon';
+import ViewIcon from '@/shared/assets/icons/views.svg';
+import { Card } from '@/shared/ui/Card';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { useNavigate } from 'react-router-dom';
+import { AppLink } from '@/shared/ui/AppLink';
+import { ArticleView } from '../../model/consts/articleConsts';
+import { ArticleBlockType } from '../../model/consts/articleConsts';
+import { getRouteArticleDetails } from '@/shared/const/router';
+import { AppImage } from '@/shared/ui/AppImage';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 interface ArticleListItemProps {
 	className?: string;
@@ -26,13 +26,7 @@ interface ArticleListItemProps {
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
-
-	const {
-		className,
-		article,
-		view,
-		target,
-	} = props
+	const { className, article, view, target } = props;
 
 	const { t } = useTranslation();
 	const navigate = useNavigate();
@@ -51,7 +45,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
 	if (view === ArticleView.BIG) {
 		let textBlock = article.blocks.find(
-			block => block.type === ArticleBlockType.TEXT
+			(block) => block.type === ArticleBlockType.TEXT,
 		) as ArticleTextBlock;
 		return (
 			<div
@@ -64,7 +58,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 						<Text text={article.user.username} className={cls.username} />
 						<Text text={article.createdAt} className={cls.date} />
 					</div>
-					<Text title={article.title} className={cls.title}/>
+					<Text title={article.title} className={cls.title} />
 					{types}
 					<AppImage
 						fallback={<Skeleton width={'100%'} height={250} />}
@@ -73,15 +67,14 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 						className={cls.img}
 					/>
 					{textBlock && (
-						<ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />
+						<ArticleTextBlockComponent
+							block={textBlock}
+							className={cls.textBlock}
+						/>
 					)}
 					<div className={cls.footer}>
-						<AppLink
-							target={target}
-							to={getRouteArticleDetails(article.id)}>
-							<Button
-								theme={ButtonTheme.OUTLINE}
-							>
+						<AppLink target={target} to={getRouteArticleDetails(article.id)}>
+							<Button theme={ButtonTheme.OUTLINE}>
 								{t('Читать далее...')}
 							</Button>
 						</AppLink>
@@ -89,7 +82,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 					</div>
 				</Card>
 			</div>
-		)
+		);
 	}
 
 	return (

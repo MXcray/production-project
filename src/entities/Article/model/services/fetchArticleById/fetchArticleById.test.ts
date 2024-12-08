@@ -1,13 +1,12 @@
-import { TestAsyncThunk } from "@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk";
-import { fetchArticleById } from "./fetchArticleById";
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import { fetchArticleById } from './fetchArticleById';
 
 const data = {
 	id: '1',
 	title: 'title',
-}
+};
 
 describe('fetchArticleById.test', () => {
-
 	test('success', async () => {
 		const thunk = new TestAsyncThunk(fetchArticleById);
 		thunk.api.get.mockReturnValue(Promise.resolve({ data: data }));

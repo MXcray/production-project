@@ -6,9 +6,7 @@
 	"views": 100,
 	"createdAt": "21.02.2022",
 	"userId": "1",
-	"type": [
-		"IT"
-	],
+	"type": ["IT"],
 	"blocks": [
 		{
 			"id": "1",
@@ -25,9 +23,7 @@
 		"id": "1",
 		"username": "admin",
 		"password": "123",
-		"roles": [
-			"ADMIN"
-		],
+		"roles": ["ADMIN"],
 		"avatar": "https://forum-ru-cdn.warthunder.com/original/3X/a/f/af62d76a2d92797df0711e6a94d319490936f3a1.jpeg"
 	}
 }

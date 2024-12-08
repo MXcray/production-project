@@ -1,5 +1,3 @@
-import { profileReducer } from "./model/slice/ProfileSlice";
+import { profileReducer } from './model/slice/ProfileSlice';
 
-export {
-	profileReducer,
-}
+export { profileReducer };

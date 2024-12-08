@@ -3,7 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
-import path from "path";
+import path from 'path';
 
 export default {
 	// All imported modules in your tests should be mocked automatically
@@ -26,36 +26,21 @@ export default {
 	clearMocks: true,
 
 	// The test environment that will be used for testing
-	testEnvironment: "jsdom",
+	testEnvironment: 'jsdom',
 
 	// An array of regexp pattern strings used to skip coverage collection
-	coveragePathIgnorePatterns: [
-		"\\\\node_modules\\\\"
-	],
+	coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
 
 	// An array of directory names to be searched recursively up from the requiring module's location
-	moduleDirectories: [
-		"node_modules"
-	],
+	moduleDirectories: ['node_modules'],
 
 	// An array of file extensions your modules use
-	moduleFileExtensions: [
-		"js",
-		"jsx",
-		"ts",
-		"tsx",
-		"json",
-		"node"
-	],
+	moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
 
-	modulePaths: [
-		'<rootDir>src',
-	],
+	modulePaths: ['<rootDir>src'],
 
 	// The glob patterns Jest uses to detect test files
-	testMatch: [
-		'<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
-	],
+	testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
 
 	// The root directory that Jest should scan for tests and modules within
 	rootDir: '../../',
@@ -63,9 +48,7 @@ export default {
 	setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.ts'],
 
 	// A list of paths to directories that Jest should use to search for files in
-	roots: [
-		"<rootDir>"
-	],
+	roots: ['<rootDir>'],
 
 	moduleNameMapper: {
 		'\\.s?css$': 'identity-obj-proxy',
@@ -74,13 +57,16 @@ export default {
 	},
 
 	reporters: [
-		"default",
-		["jest-html-reporters", {
-			"publicPath": '<rootDir>/reports/unit',
-			"filename": "report.html",
-			// "openReport": true,
-			"inlineSource": true,
-		}]
+		'default',
+		[
+			'jest-html-reporters',
+			{
+				publicPath: '<rootDir>/reports/unit',
+				filename: 'report.html',
+				// "openReport": true,
+				inlineSource: true,
+			},
+		],
 	],
 
 	// Indicates whether the coverage information should be collected while executing the test

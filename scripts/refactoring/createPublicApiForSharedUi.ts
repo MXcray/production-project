@@ -13,25 +13,27 @@ const componentsDirs = sharedUiDirectory?.getDirectories();
 
 function isAbsolute(value: string) {
 	const layers = ['app', 'shared', 'entities', 'features', 'widgets', 'pages'];
-	if (layers.some(layer => value.startsWith(layer))) {
+	if (layers.some((layer) => value.startsWith(layer))) {
 		return true;
 	}
 }
 
-componentsDirs?.forEach(directory => {
-	const indexFilePath  = directory.getPath() + '/sort.ts';
+componentsDirs?.forEach((directory) => {
+	const indexFilePath = directory.getPath() + '/sort.ts';
 	const indexFile = directory.getSourceFile(indexFilePath);
 
 	if (!indexFile) {
 		const sourceCode = `export * from './${directory.getBaseName()}';`;
-		const file = directory.createSourceFile(indexFilePath, sourceCode, { overwrite: true });
+		const file = directory.createSourceFile(indexFilePath, sourceCode, {
+			overwrite: true,
+		});
 
 		file.save();
 	}
-})
+});
 
-files.forEach(sourceFile => {
-	const importDeclarations =  sourceFile.getImportDeclarations();
+files.forEach((sourceFile) => {
+	const importDeclarations = sourceFile.getImportDeclarations();
 	importDeclarations.forEach((importDeclaration) => {
 		const value = importDeclaration.getModuleSpecifierValue();
 		const valueWithoutAlias = value.replace('@/', '');
@@ -45,7 +47,7 @@ files.forEach(sourceFile => {
 			const result = valueWithoutAlias.split('/').slice(0, 3).join('/');
 			importDeclaration.setModuleSpecifier(`@/${result}`);
 		}
-	})
-})
+	});
+});
 
 project.save();

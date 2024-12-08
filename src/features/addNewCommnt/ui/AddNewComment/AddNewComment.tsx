@@ -1,18 +1,24 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './AddNewComment.module.scss';
-import { useTranslation } from "react-i18next";
-import { memo, useCallback } from "react";
-import { Input } from "@/shared/ui/Input";
-import { Button, ButtonTheme } from "@/shared/ui/Button";
-import { useSelector } from "react-redux";
+import { useTranslation } from 'react-i18next';
+import { memo, useCallback } from 'react';
+import { Input } from '@/shared/ui/Input';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { useSelector } from 'react-redux';
 import {
 	getAddNewCommentError,
-	getAddNewCommentText
-} from "../../model/selectors/addNewCommentSelectors";
-import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { addNewCommentActions, addNewCommentReducer } from "../../model/slices/addNewCommentSlice";
-import { DynamicModuleLoader, ReducersList } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { HStack } from "@/shared/ui/stack";
+	getAddNewCommentText,
+} from '../../model/selectors/addNewCommentSelectors';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import {
+	addNewCommentActions,
+	addNewCommentReducer,
+} from '../../model/slices/addNewCommentSlice';
+import {
+	DynamicModuleLoader,
+	ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { HStack } from '@/shared/ui/stack';
 
 export interface addNewCommentProps {
 	className?: string;
@@ -20,28 +26,27 @@ export interface addNewCommentProps {
 }
 
 const reducers: ReducersList = {
-	addNewComment: addNewCommentReducer
-}
+	addNewComment: addNewCommentReducer,
+};
 
 const addNewComment = memo((props: addNewCommentProps) => {
-
-	const {
-		className,
-		onSendComment,
-	} = props;
+	const { className, onSendComment } = props;
 	const { t } = useTranslation();
 	const text = useSelector(getAddNewCommentText);
 	const error = useSelector(getAddNewCommentError);
 	const dispatch = useAppDispatch();
 
-	const onCommentTextChange = useCallback((value: string) => {
-		dispatch(addNewCommentActions.setText(value));
-	}, [dispatch]);
+	const onCommentTextChange = useCallback(
+		(value: string) => {
+			dispatch(addNewCommentActions.setText(value));
+		},
+		[dispatch],
+	);
 
 	const onSendHandler = useCallback(() => {
 		onSendComment(text || '');
 		onCommentTextChange('');
-	}, [onCommentTextChange, onSendComment, text])
+	}, [onCommentTextChange, onSendComment, text]);
 
 	return (
 		<DynamicModuleLoader reducers={reducers}>

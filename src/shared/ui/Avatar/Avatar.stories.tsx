@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Avatar } from "./Avatar";
+import { Avatar } from './Avatar';
 import AvatarImg from './storybook.jpeg';
 
 export default {
@@ -25,4 +25,3 @@ Small.args = {
 	size: 50,
 	src: AvatarImg,
 };
-

@@ -1,8 +1,8 @@
 module.exports = {
 	settings: {
 		react: {
-			version: "detect",
-		}
+			version: 'detect',
+		},
 	},
 	env: {
 		browser: true,
@@ -15,6 +15,7 @@ module.exports = {
 		'plugin:i18next/recommended',
 		// 'plugin:storybook/recommended',
 		// 'plugin:storybook/recommended'
+		'prettier',
 	],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
@@ -24,23 +25,10 @@ module.exports = {
 		ecmaVersion: 'latest',
 		sourceType: 'module',
 	},
-	plugins: [
-		'react',
-		'@typescript-eslint',
-		'i18next',
-		'react-hooks',
-		'anton-plugin',
-		'unused-imports',
-	],
+	plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'anton-plugin', 'unused-imports'],
 	rules: {
-		'react/jsx-indent': [2, 'tab'],
-		'react/jsx-indent-props': [2, 'tab'],
 		'unused-imports/no-unused-imports': 'error',
-		indent: [2, 'tab'],
-		'react/jsx-filename-extension': [
-			2,
-			{ extensions: ['.js', '.jsx', '.tsx'] },
-		],
+		'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
 		'import/no-unresolved': 'off',
 		'import/prefer-default-export': 'off',
 		'no-unused-vars': 'warn',
@@ -71,16 +59,18 @@ module.exports = {
 		'no-undef': 'off',
 		'anton-plugin/path-checker': ['error', { alias: '@' }],
 		'anton-plugin/layer-imports': [
-			'error', {
+			'error',
+			{
 				alias: '@',
 				ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
-			}
+			},
 		],
 		'anton-plugin/public-api-imports': [
-			'error', {
+			'error',
+			{
 				alias: '@',
 				testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
-			}
+			},
 		],
 	},
 	globals: {

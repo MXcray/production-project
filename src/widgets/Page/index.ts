@@ -1,6 +1,3 @@
-import { PAGE_ID, Page } from "./ui/Page";
+import { PAGE_ID, Page } from './ui/Page';
 
-export {
-	Page,
-	PAGE_ID,
-}
+export { Page, PAGE_ID };

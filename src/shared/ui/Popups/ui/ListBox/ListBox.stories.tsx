@@ -10,11 +10,17 @@ export default {
 		backgroundColor: { control: 'color' },
 	},
 	decorators: [
-		Story => <div style={{ padding: 100 }}><Story/></div>
-	]
+		(Story) => (
+			<div style={{ padding: 100 }}>
+				<Story />
+			</div>
+		),
+	],
 } as ComponentMeta<typeof ListBox>;
 
-const Template: ComponentStory<typeof ListBox> = (args) => <ListBox {...args} />;
+const Template: ComponentStory<typeof ListBox> = (args) => (
+	<ListBox {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {
@@ -32,7 +38,7 @@ Normal.args = {
 			content: '4g34f523awd3g3g4',
 			value: '1231234',
 		},
-	]
+	],
 };
 
 export const topLeft = Template.bind({});
@@ -52,7 +58,7 @@ topLeft.args = {
 			content: '4g34f523awd3g3g4',
 			value: '1231234',
 		},
-	]
+	],
 };
 
 export const topRight = Template.bind({});
@@ -72,7 +78,7 @@ topRight.args = {
 			content: '4g34f523awd3g3g4',
 			value: '1231234',
 		},
-	]
+	],
 };
 
 export const bottomLeft = Template.bind({});
@@ -92,7 +98,7 @@ bottomLeft.args = {
 			content: '4g34f523awd3g3g4',
 			value: '1231234',
 		},
-	]
+	],
 };
 
 export const bottomRight = Template.bind({});
@@ -112,5 +118,5 @@ bottomRight.args = {
 			content: '4g34f523awd3g3g4',
 			value: '1231234',
 		},
-	]
+	],
 };

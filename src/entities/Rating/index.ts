@@ -1,7 +1,4 @@
-import { Rating } from "./model/types/types";
-import { RatingCard } from "./ui/RatingCard/RatingCard";
+import { Rating } from './model/types/types';
+import { RatingCard } from './ui/RatingCard/RatingCard';
 
-export {
-	RatingCard,
-	type Rating,
-}
+export { RatingCard, type Rating };

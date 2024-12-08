@@ -22,7 +22,7 @@ Row.args = {
 			<div>Third</div>
 			<div>Fourth</div>
 		</>
-	)
+	),
 };
 
 export const RowGap4 = Template.bind({});
@@ -35,7 +35,7 @@ RowGap4.args = {
 			<div>Third</div>
 			<div>Fourth</div>
 		</>
-	)
+	),
 };
 
 export const RowGap8 = Template.bind({});
@@ -48,7 +48,7 @@ RowGap8.args = {
 			<div>Third</div>
 			<div>Fourth</div>
 		</>
-	)
+	),
 };
 
 export const RowGap16 = Template.bind({});
@@ -61,7 +61,7 @@ RowGap16.args = {
 			<div>Third</div>
 			<div>Fourth</div>
 		</>
-	)
+	),
 };
 
 export const RowGap32 = Template.bind({});
@@ -74,7 +74,7 @@ RowGap32.args = {
 			<div>Third</div>
 			<div>Fourth</div>
 		</>
-	)
+	),
 };
 
 export const Column = Template.bind({});
@@ -87,7 +87,7 @@ Column.args = {
 			<div>Third</div>
 			<div>Fourth</div>
 		</>
-	)
+	),
 };
 
 export const ColumnGap16 = Template.bind({});
@@ -101,5 +101,5 @@ ColumnGap16.args = {
 			<div>Third</div>
 			<div>Fourth</div>
 		</>
-	)
+	),
 };

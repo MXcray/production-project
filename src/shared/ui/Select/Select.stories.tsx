@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Select } from "./Select";
+import { Select } from './Select';
 
 export default {
 	title: 'shared/Select',
@@ -21,4 +21,3 @@ Primary.args = {
 		{ value: '153123', content: 'Третий пункт' },
 	],
 };
-

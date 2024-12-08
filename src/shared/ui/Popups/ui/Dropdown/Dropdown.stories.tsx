@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Dropdown } from './Dropdown';
-import { Button } from "@storybook/react/demo";
+import { Button } from '@storybook/react/demo';
 
 export default {
 	title: 'shared/Dropdown',
@@ -12,20 +12,22 @@ export default {
 	},
 } as ComponentMeta<typeof Dropdown>;
 
-const Template: ComponentStory<typeof Dropdown> = (args) => <Dropdown {...args} />;
+const Template: ComponentStory<typeof Dropdown> = (args) => (
+	<Dropdown {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {
 	trigger: <Button>Open</Button>,
 	items: [
 		{
-			content: 'first'
+			content: 'first',
 		},
 		{
-			content: 'second'
+			content: 'second',
 		},
 		{
-			content: 'third'
+			content: 'third',
 		},
 	],
 };

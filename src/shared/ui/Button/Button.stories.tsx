@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Button, ButtonSize, ButtonTheme } from './Button';
 
-import { Theme } from "@/shared/const/theme";
+import { Theme } from '@/shared/const/theme';
 
 export default {
 	title: 'shared/Button',
@@ -43,14 +43,14 @@ export const OutlineSizeL = Template.bind({});
 OutlineSizeL.args = {
 	children: 'Text',
 	theme: ButtonTheme.OUTLINE,
-	size: ButtonSize.L
+	size: ButtonSize.L,
 };
 
 export const OutlineSizeXL = Template.bind({});
 OutlineSizeXL.args = {
 	children: 'Text',
 	theme: ButtonTheme.OUTLINE,
-	size: ButtonSize.XL
+	size: ButtonSize.XL,
 };
 
 export const OutlineDark = Template.bind({});
@@ -83,7 +83,7 @@ SquareSizeL.args = {
 	children: '>',
 	theme: ButtonTheme.BACKGROUND_INVERTED,
 	square: true,
-	size: ButtonSize.L
+	size: ButtonSize.L,
 };
 
 export const SquareSizeXL = Template.bind({});
@@ -91,14 +91,14 @@ SquareSizeXL.args = {
 	children: '>',
 	theme: ButtonTheme.BACKGROUND_INVERTED,
 	square: true,
-	size: ButtonSize.XL
+	size: ButtonSize.XL,
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
 	children: 'Text',
 	theme: ButtonTheme.OUTLINE,
-	disabled: true
+	disabled: true,
 };
 
 OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];

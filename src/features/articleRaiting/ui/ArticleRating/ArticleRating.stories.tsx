@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import ArticleRating from './ArticleRating';
-import { StoreDecorator } from "@/shared/config/storybook/storeDecorator/StoreDecorator";
+import { StoreDecorator } from '@/shared/config/storybook/storeDecorator/StoreDecorator';
 
 export default {
 	title: 'features/ArticleRating',
@@ -12,7 +12,9 @@ export default {
 	},
 } as ComponentMeta<typeof ArticleRating>;
 
-const Template: ComponentStory<typeof ArticleRating> = (args) => <ArticleRating {...args} />;
+const Template: ComponentStory<typeof ArticleRating> = (args) => (
+	<ArticleRating {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {
@@ -25,8 +27,8 @@ Normal.decorators = [
 				id: '1',
 			},
 		},
-	})
-]
+	}),
+];
 Normal.parameters = {
 	mockData: [
 		{
@@ -36,11 +38,11 @@ Normal.parameters = {
 			response: [
 				{
 					rate: 4,
-				}
-			]
-		}
-	]
-}
+				},
+			],
+		},
+	],
+};
 
 export const WithoutRate = Template.bind({});
 WithoutRate.args = {
@@ -53,8 +55,8 @@ WithoutRate.decorators = [
 				id: '1',
 			},
 		},
-	})
-]
+	}),
+];
 WithoutRate.parameters = {
 	mockData: [
 		{
@@ -62,6 +64,6 @@ WithoutRate.parameters = {
 			method: 'GET',
 			status: 200,
 			response: [],
-		}
-	]
-}
+		},
+	],
+};

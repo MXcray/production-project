@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { NotificationList } from './NotificationList';
-import { StoreDecorator } from "@/shared/config/storybook/storeDecorator/StoreDecorator";
+import { StoreDecorator } from '@/shared/config/storybook/storeDecorator/StoreDecorator';
 
 export default {
 	title: 'entities/Notification/NotificationList',
@@ -12,11 +12,13 @@ export default {
 	},
 } as ComponentMeta<typeof NotificationList>;
 
-const Template: ComponentStory<typeof NotificationList> = (args) => <NotificationList {...args} />;
+const Template: ComponentStory<typeof NotificationList> = (args) => (
+	<NotificationList {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {};
-Normal.decorators = [StoreDecorator({})]
+Normal.decorators = [StoreDecorator({})];
 Normal.parameters = {
 	mockData: [
 		{
@@ -27,19 +29,19 @@ Normal.parameters = {
 				{
 					id: '1',
 					title: 'Уведомление 1',
-					description: 'Описание'
+					description: 'Описание',
 				},
 				{
 					id: '2',
 					title: 'Уведомление 2',
-					description: 'Описание'
+					description: 'Описание',
 				},
 				{
 					id: '3',
 					title: 'Уведомление 3',
-					description: 'Описание'
-				}
-			]
-		}
-	]
-}
+					description: 'Описание',
+				},
+			],
+		},
+	],
+};

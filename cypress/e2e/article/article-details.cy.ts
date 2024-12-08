@@ -5,9 +5,9 @@ describe('Пользователь заходит на страницу стат
 		cy.login();
 		cy.createArticle().then((article) => {
 			currentArticleId = article.id;
-			cy.visit(`articles/${article.id}`)
+			cy.visit(`articles/${article.id}`);
 		});
-	})
+	});
 	// Создаем статью - тестим - удаляем
 	afterEach(() => {
 		cy.removeArticle(currentArticleId);
@@ -42,4 +42,4 @@ describe('Пользователь заходит на страницу стат
 		cy.setRate(5, 'feedback');
 		cy.get(`[data-selected=true]`).should('have.length', 5);
 	});
-})
+});

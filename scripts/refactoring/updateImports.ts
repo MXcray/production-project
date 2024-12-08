@@ -9,20 +9,20 @@ const files = project.getSourceFiles();
 
 function isAbsolute(value: string) {
 	const layers = ['app', 'shared', 'entities', 'features', 'widgets', 'pages'];
-	if (layers.some(layer => value.startsWith(layer))) {
+	if (layers.some((layer) => value.startsWith(layer))) {
 		return true;
 	}
 }
 
-files.forEach(sourceFile => {
-	const importDeclarations =  sourceFile.getImportDeclarations();
+files.forEach((sourceFile) => {
+	const importDeclarations = sourceFile.getImportDeclarations();
 	importDeclarations.forEach((importDeclaration) => {
 		const value = importDeclaration.getModuleSpecifierValue();
 
 		if (isAbsolute(value)) {
 			importDeclaration.setModuleSpecifier(`@/${value}`);
 		}
-	})
-})
+	});
+});
 
 project.save();

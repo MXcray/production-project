@@ -1,4 +1,4 @@
-import { selectByTestId } from "../../helpers/selectByTestId";
+import { selectByTestId } from '../../helpers/selectByTestId';
 
 describe('Роутинг', () => {
 	describe('Пользователь не авторизован', () => {
@@ -16,7 +16,7 @@ describe('Роутинг', () => {
 			cy.visit('/awdafawfa');
 			cy.get(selectByTestId('NotFoundPage')).should('exist');
 		});
-	})
+	});
 	describe('Пользователь авторизован', () => {
 		beforeEach(() => {
 			cy.login();
@@ -30,6 +30,6 @@ describe('Роутинг', () => {
 		it('Переход на страницу списка статей', () => {
 			cy.visit('/articles');
 			cy.get(selectByTestId('ArticlesPage')).should('exist');
-		})
-	})
-})
+		});
+	});
+});

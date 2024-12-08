@@ -1,14 +1,14 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './CommentCard.module.scss';
-import { useTranslation } from "react-i18next";
-import { memo } from "react";
+import { useTranslation } from 'react-i18next';
+import { memo } from 'react';
 import { Comment } from '../../model/types/comments';
-import { Avatar } from "@/shared/ui/Avatar";
-import { Text } from "@/shared/ui/Text";
-import { Skeleton } from "@/shared/ui/Skeleton";
-import { AppLink } from "@/shared/ui/AppLink";
-import { VStack } from "@/shared/ui/stack";
-import { getRouteProfile } from "@/shared/const/router";
+import { Avatar } from '@/shared/ui/Avatar';
+import { Text } from '@/shared/ui/Text';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { AppLink } from '@/shared/ui/AppLink';
+import { VStack } from '@/shared/ui/stack';
+import { getRouteProfile } from '@/shared/const/router';
 
 interface CommentCardProps {
 	className?: string;
@@ -17,12 +17,7 @@ interface CommentCardProps {
 }
 
 export const CommentCard = memo((props: CommentCardProps) => {
-
-	const {
-		className,
-		isLoading ,
-		comment,
-	} = props;
+	const { className, isLoading, comment } = props;
 
 	const { t } = useTranslation();
 
@@ -55,7 +50,9 @@ export const CommentCard = memo((props: CommentCardProps) => {
 			data-testid={'CommendCard.Content'}
 		>
 			<AppLink className={cls.header} to={getRouteProfile(comment.user.id)}>
-				{comment.user.avatar ? <Avatar size={30} src={comment.user.avatar} /> : null}
+				{comment.user.avatar ? (
+					<Avatar size={30} src={comment.user.avatar} />
+				) : null}
 				<Text className={cls.username} title={comment.user.username} />
 			</AppLink>
 			<Text className={cls.text} text={comment.text} />

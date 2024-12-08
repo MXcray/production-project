@@ -1,5 +1,3 @@
-import { addNewCommentReducer } from "./model/slices/addNewCommentSlice";
+import { addNewCommentReducer } from './model/slices/addNewCommentSlice';
 
-export {
-	addNewCommentReducer,
-}
+export { addNewCommentReducer };

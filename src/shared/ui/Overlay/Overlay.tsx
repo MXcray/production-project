@@ -1,6 +1,6 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Overlay.module.scss';
-import { memo } from "react";
+import { memo } from 'react';
 
 interface OverlayProps {
 	className?: string;
@@ -8,13 +8,12 @@ interface OverlayProps {
 }
 
 export const Overlay = memo((props: OverlayProps) => {
-
-	const {
-		className,
-		onClick,
-	} = props;
+	const { className, onClick } = props;
 
 	return (
-		<div onClick={onClick} className={classNames(cls.Overlay, {}, [className])}/>
+		<div
+			onClick={onClick}
+			className={classNames(cls.Overlay, {}, [className])}
+		/>
 	);
 });

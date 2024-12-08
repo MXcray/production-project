@@ -1,13 +1,13 @@
-import { MainPage } from "@/pages/MainPage";
-import { AboutPage } from "@/pages/AboutPage";
-import { ProfilePage } from "@/pages/ProfilePage";
-import { ArticlePage } from "@/pages/ArticlesPage";
-import { ArticleDetails } from "@/pages/ArticleDetailsPage";
-import { ArticleEditPage } from "@/pages/ArticleEditPage";
-import { AdminPanelPage } from "@/pages/AdminPanelPage";
-import { UserRole } from "@/entities/User";
-import { ForbiddenPage } from "@/pages/ForbiddenPage";
-import { NotFoundPage } from "@/pages/NotFoundPage";
+import { MainPage } from '@/pages/MainPage';
+import { AboutPage } from '@/pages/AboutPage';
+import { ProfilePage } from '@/pages/ProfilePage';
+import { ArticlePage } from '@/pages/ArticlesPage';
+import { ArticleDetails } from '@/pages/ArticleDetailsPage';
+import { ArticleEditPage } from '@/pages/ArticleEditPage';
+import { AdminPanelPage } from '@/pages/AdminPanelPage';
+import { UserRole } from '@/entities/User';
+import { ForbiddenPage } from '@/pages/ForbiddenPage';
+import { NotFoundPage } from '@/pages/NotFoundPage';
 import {
 	AppRoutes,
 	getRouteAbout,
@@ -19,8 +19,8 @@ import {
 	getRouteForbidden,
 	getRouteMain,
 	getRouteProfile,
-} from "@/shared/const/router";
-import { appRoutesProps } from "@/shared/types/router";
+} from '@/shared/const/router';
+import { appRoutesProps } from '@/shared/types/router';
 
 export const routeConfig: Record<AppRoutes, appRoutesProps> = {
 	[AppRoutes.MAIN]: {
@@ -29,7 +29,7 @@ export const routeConfig: Record<AppRoutes, appRoutesProps> = {
 	},
 	[AppRoutes.ABOUT]: {
 		path: getRouteAbout(),
-		element: <AboutPage />
+		element: <AboutPage />,
 	},
 	[AppRoutes.PROFILE]: {
 		path: getRouteProfile(':id'),
@@ -69,6 +69,6 @@ export const routeConfig: Record<AppRoutes, appRoutesProps> = {
 	//last
 	[AppRoutes.NOT_FOUND]: {
 		path: '*',
-		element: <NotFoundPage />
+		element: <NotFoundPage />,
 	},
-}
+};
