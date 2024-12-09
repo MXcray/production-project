@@ -563,6 +563,10 @@
 			"username": "admin",
 			"password": "123",
 			"roles": ["ADMIN"],
+			"features": {
+				"isArticleRatingEnabled": true,
+				"isCounterEnabled": true
+			},
 			"avatar": "https://forum-ru-cdn.warthunder.com/original/3X/a/f/af62d76a2d92797df0711e6a94d319490936f3a1.jpeg"
 		},
 		{
@@ -570,6 +574,10 @@
 			"username": "user",
 			"password": "123",
 			"roles": ["USER"],
+			"features": {
+				"isArticleRatingEnabled": false,
+				"isCounterEnabled": false
+			},
 			"avatar": "https://i.pinimg.com/564x/d8/b1/c4/d8b1c4a62b80f8310aad578cf957f176.jpg"
 		},
 		{
@@ -577,6 +585,10 @@
 			"username": "manager",
 			"password": "123",
 			"roles": ["MANAGER"],
+			"features": {
+				"isArticleRatingEnabled": false,
+				"isCounterEnabled": true
+			},
 			"avatar": "https://i.pinimg.com/564x/d8/b1/c4/d8b1c4a62b80f8310aad578cf957f176.jpg"
 		},
 		{
@@ -584,6 +596,10 @@
 			"username": "testuser",
 			"password": "123",
 			"roles": ["ADMIN"],
+			"features": {
+				"isArticleRatingEnabled": true,
+				"isCounterEnabled": false
+			},
 			"avatar": "https://i.pinimg.com/564x/d8/b1/c4/d8b1c4a62b80f8310aad578cf957f176.jpg"
 		}
 	],
