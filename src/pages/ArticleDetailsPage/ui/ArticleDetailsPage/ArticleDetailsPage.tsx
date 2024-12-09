@@ -15,8 +15,8 @@ import { VStack } from '@/shared/ui/stack';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationList';
 import { ArticleDetailsComments } from '../../ui/ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleRating } from '@/features/articleRaiting';
-import { getFeatureFlags } from '@/shared/lib/features';
-import { Counter } from '@/entities/Counter';
+import { getFeatureFlags, toggleFeatures } from '@/shared/lib/features';
+import { Card } from '@/shared/ui/Card';
 
 interface ArticleDetailsPageProps {
 	className?: string;
@@ -30,11 +30,16 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 	const { t } = useTranslation('article-details');
 	const { id } = useParams<{ id: string }>();
 	const isArticleRatingEnabled = getFeatureFlags('isArticleRatingEnabled');
-	const isCounterEnabled = getFeatureFlags('isCounterEnabled');
 
 	if (!id) {
 		return null;
 	}
+
+	const articleRatingCard = toggleFeatures({
+		name: 'isArticleRatingEnabled',
+		on: () => <ArticleRating articleId={id} />,
+		off: () => <Card>{t('Оценка статей скоро появится')}</Card>,
+	});
 
 	return (
 		<DynamicModuleLoader reducers={reducers} removeAfterUnmount={true}>
@@ -42,8 +47,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 				<VStack gap={'16'} max>
 					<ArticleDetailsPageHeader />
 					<ArticleDetails id={id} />
-					{isCounterEnabled && <Counter />}
-					{isArticleRatingEnabled && <ArticleRating articleId={id} />}
+					{articleRatingCard}
 					<ArticleRecommendationsList />
 					<ArticleDetailsComments id={id} />
 				</VStack>
