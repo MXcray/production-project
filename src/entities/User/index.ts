@@ -8,6 +8,8 @@ import {
 	isUserManager,
 } from './model/selectors/roleSelector';
 import { UserRole } from './model/consts/userConsts';
+import { useJsonSettings } from './model/selectors/jsonSettings';
+import { saveJsonSettings } from './model/services/saveJsonSettings';
 
 export {
 	userReducer,
@@ -20,4 +22,6 @@ export {
 	isUserAdmin,
 	isUserManager,
 	getUserRoles,
+	useJsonSettings,
+	saveJsonSettings,
 };
