@@ -10,6 +10,7 @@ import {
 import { UserRole } from './model/consts/userConsts';
 import { useJsonSettings } from './model/selectors/jsonSettings';
 import { saveJsonSettings } from './model/services/saveJsonSettings';
+import { initAuthData } from './model/services/initAuthData';
 
 export {
 	userReducer,
@@ -24,4 +25,5 @@ export {
 	getUserRoles,
 	useJsonSettings,
 	saveJsonSettings,
+	initAuthData,
 };
