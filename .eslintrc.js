@@ -25,10 +25,20 @@ module.exports = {
 		ecmaVersion: 'latest',
 		sourceType: 'module',
 	},
-	plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'anton-plugin', 'unused-imports'],
+	plugins: [
+		'react',
+		'@typescript-eslint',
+		'i18next',
+		'react-hooks',
+		'anton-plugin',
+		'unused-imports',
+	],
 	rules: {
 		'unused-imports/no-unused-imports': 'error',
-		'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
+		'react/jsx-filename-extension': [
+			2,
+			{ extensions: ['.js', '.jsx', '.tsx'] },
+		],
 		'import/no-unresolved': 'off',
 		'import/prefer-default-export': 'off',
 		'no-unused-vars': 'warn',
@@ -45,7 +55,16 @@ module.exports = {
 			'error',
 			{
 				markupOnly: true,
-				ignoreAttribute: ['data-testid', 'to', 'justify', 'align', 'direction', 'gap', 'role'],
+				ignoreAttribute: [
+					'data-testid',
+					'to',
+					'justify',
+					'align',
+					'direction',
+					'gap',
+					'role',
+					'feature',
+				],
 			},
 		],
 		'max-len': ['error', { code: 120, ignoreComments: true }],
@@ -69,7 +88,11 @@ module.exports = {
 			'error',
 			{
 				alias: '@',
-				testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+				testFilesPatterns: [
+					'**/*.test.*',
+					'**/*.story.*',
+					'**/StoreDecorator.tsx',
+				],
 			},
 		],
 	},
