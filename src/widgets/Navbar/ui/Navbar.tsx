@@ -6,12 +6,13 @@ import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { LoginModal } from '@/features/AuthByUsername';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/User';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { Text, TextTheme } from '@/shared/ui/Text';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
+import { getRouteArticleCreate } from '@/shared/const/router';
 import { HStack } from '@/shared/ui/stack';
 import { NotificationButton } from '@/features/NotificationButton';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
-import { getRouteArticleCreate } from '@/shared/const/router';
 
 interface NavbarProps {
 	className?: string;
@@ -30,7 +31,18 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 		setIsAuthModal(true);
 	}, []);
 
-	if (authData) {
+	const RedesignedNavbar = () => {
+		return (
+			<header className={classNames(cls.NavbarRedesigned, {}, [className])}>
+				<HStack gap={'16'} className={cls.actions}>
+					<NotificationButton />
+					<AvatarDropdown />
+				</HStack>
+			</header>
+		);
+	};
+
+	const DeprecatedNavbar = () => {
 		return (
 			<header className={classNames(cls.Navbar, {}, [className])}>
 				<Text
@@ -50,6 +62,16 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 					<AvatarDropdown />
 				</HStack>
 			</header>
+		);
+	};
+
+	if (authData) {
+		return (
+			<ToggleFeatures
+				feature={'isAppRedesigned'}
+				on={<RedesignedNavbar />}
+				off={<DeprecatedNavbar />}
+			/>
 		);
 	}
 
