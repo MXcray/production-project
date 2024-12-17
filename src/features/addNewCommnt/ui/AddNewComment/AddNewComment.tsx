@@ -3,7 +3,7 @@ import cls from './AddNewComment.module.scss';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { Input } from '@/shared/ui/deprecated/Input';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { useSelector } from 'react-redux';
 import {
 	getAddNewCommentError,

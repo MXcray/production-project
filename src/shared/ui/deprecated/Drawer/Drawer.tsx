@@ -1,8 +1,8 @@
 import { memo, ReactNode, useCallback, useEffect } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Drawer.module.scss';
-import { Portal } from '../../Portal/Portal';
-import { Overlay } from '../../Overlay/Overlay';
+import { Portal } from '../Portal/Portal';
+import { Overlay } from '../Overlay/Overlay';
 import {
 	AnimationProvider,
 	useAnimationLibs,
@@ -110,6 +110,10 @@ const DrawerAsync = (props: DrawerProps) => {
 	return <DrawerContent {...props} />;
 };
 
+/**
+ * Устарел, новые компоненты в папке redesigned
+ * @deprecated
+ */
 export const Drawer = (props: DrawerProps) => {
 	return (
 		<AnimationProvider>

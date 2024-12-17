@@ -8,7 +8,7 @@ import {
 } from '../../model/selectors/articlesPageSelectors';
 import { ArticleList } from '@/entities/Article';
 import { useTranslation } from 'react-i18next';
-import { Text } from '@/shared/ui/Text';
+import { Text } from '@/shared/ui/deprecated/Text';
 
 interface ArticleInfiniteListProps {
 	className?: string;

@@ -1,7 +1,7 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, Suspense, useCallback } from 'react';
-import { Text, TextSize } from '@/shared/ui/Text';
+import { Text, TextSize } from '@/shared/ui/deprecated/Text';
 import { AddNewComment } from '@/features/addNewCommnt';
 import { CommentList } from '@/entities/Comment';
 import { useSelector } from 'react-redux';
@@ -12,7 +12,7 @@ import { getArticleComments } from '../../model/slice/articleDetailsCommentSlice
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { VStack } from '@/shared/ui/deprecated/stack';
-import { Loader } from '@/shared/ui/Loader';
+import { Loader } from '@/shared/ui/deprecated/Loader';
 
 interface ArticleDetailsCommentsProps {
 	className?: string;
