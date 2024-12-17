@@ -11,7 +11,7 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { getArticleComments } from '../../model/slice/articleDetailsCommentSlice';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { VStack } from '@/shared/ui/stack';
+import { VStack } from '@/shared/ui/deprecated/stack';
 import { Loader } from '@/shared/ui/Loader';
 
 interface ArticleDetailsCommentsProps {

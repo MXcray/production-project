@@ -6,7 +6,7 @@ import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button';
-import { VStack } from '@/shared/ui/stack';
+import { VStack } from '@/shared/ui/deprecated/stack';
 import { ThemeSwitcher } from '@/features/ThemeSwither';
 import { LangSwitcher } from '@/features/LangSwitcher';
 import cls from './Sidebar.module.scss';

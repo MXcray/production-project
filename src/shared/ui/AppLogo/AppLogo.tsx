@@ -1,7 +1,7 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './AppLogo.module.scss';
 import { memo } from 'react';
-import { HStack } from '../stack';
+import { HStack } from '../deprecated/stack';
 import AppSvg from '@/shared/assets/icons/app-image.svg';
 
 interface AppLogoProps {

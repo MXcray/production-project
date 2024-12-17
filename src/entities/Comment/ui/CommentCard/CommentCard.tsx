@@ -7,7 +7,7 @@ import { Avatar } from '@/shared/ui/Avatar';
 import { Text } from '@/shared/ui/Text';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { AppLink } from '@/shared/ui/AppLink';
-import { VStack } from '@/shared/ui/stack';
+import { VStack } from '@/shared/ui/deprecated/stack';
 import { getRouteProfile } from '@/shared/const/router';
 
 interface CommentCardProps {

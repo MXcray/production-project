@@ -20,7 +20,7 @@ import {
 	ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { EditableProfileCardHeader } from '../../ui/EditableProfileCardHeader/EditableProfileCardHeader';
-import { VStack } from '@/shared/ui/stack';
+import { VStack } from '@/shared/ui/deprecated/stack';
 import { ValidateProfileErrors } from '../../model/consts/consts';
 
 interface EditableProfileCardProps {

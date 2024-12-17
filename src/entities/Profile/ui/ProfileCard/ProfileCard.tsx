@@ -2,7 +2,7 @@ import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './ProfileCard.module.scss';
 import { useTranslation } from 'react-i18next';
 import { Text, TextAlign, TextTheme } from '@/shared/ui/Text';
-import { Input } from '@/shared/ui/Input';
+import { Input } from '@/shared/ui/deprecated/Input';
 import { Profile } from '../../model/types/profile';
 import { Loader } from '@/shared/ui/Loader';
 import { Avatar } from '@/shared/ui/Avatar';
@@ -10,7 +10,7 @@ import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
 import { CurrencySelect } from '@/entities/Currency';
 import { CountrySelect } from '@/entities/Country';
-import { HStack, VStack } from '@/shared/ui/stack';
+import { HStack, VStack } from '@/shared/ui/deprecated/stack';
 
 interface ProfileCardProps {
 	className?: string;
