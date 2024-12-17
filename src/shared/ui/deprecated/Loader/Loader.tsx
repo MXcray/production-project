@@ -5,6 +5,10 @@ interface LoaderProps {
 	className?: string;
 }
 
+/**
+ * Устарел, новые компоненты в папке redesigned
+ * @deprecated
+ */
 export const Loader = ({ className }: LoaderProps) => {
 	return (
 		<div
