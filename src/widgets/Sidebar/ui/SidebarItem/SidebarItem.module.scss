@@ -11,7 +11,6 @@
 .link {
 	display: block;
 	transition: 0.2s;
-	color: #fff;
 }
 
 .icon {
@@ -19,6 +18,34 @@
 }
 
 .collapsed {
+	.link {
+		display: none;
+	}
+}
+
+.itemRedesigned {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	padding: 0 16px;
+}
+
+.active {
+	background: linear-gradient(89.97deg, rgba(29, 89, 255, 0.3) 1.15%, rgba(94, 211, 243, 0) 99.97%);
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		width: 2px;
+		left: 0;
+		background: var(--accent-redesigned);
+		height: 100%;
+	}
+}
+
+.collapsedRedesigned {
+	padding: 0 8px;
 	.link {
 		display: none;
 	}

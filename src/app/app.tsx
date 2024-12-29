@@ -54,7 +54,7 @@ const App = () => {
 	);
 
 	// return (
-	// 	<div className={classNames('app', {}, [theme])}>
+	// 	<div className={classNames('app', {}, [variant])}>
 	// 		<Suspense fallback={''}>
 	// 			<Navbar className={'navbar'} />
 	// 			<div className={'content-page'}>
