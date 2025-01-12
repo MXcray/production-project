@@ -4,7 +4,7 @@ import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { HStack } from '@/shared/ui/deprecated/stack';
+import { HStack } from '@/shared/ui/redesigned/stack';
 import { Text } from '@/shared/ui/deprecated/Text';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';

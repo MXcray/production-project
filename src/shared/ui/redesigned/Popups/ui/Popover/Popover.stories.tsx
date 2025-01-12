@@ -1,18 +1,18 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { AppImage } from './AppImage';
+import { Popover } from './Popover';
 
 export default {
-	title: 'shared/AppImage',
-	component: AppImage,
+	title: 'shared/PopoverRedesigned',
+	component: Popover,
 	argTypes: {
 		backgroundColor: { control: 'color' },
 	},
-} as ComponentMeta<typeof AppImage>;
+} as ComponentMeta<typeof Popover>;
 
-const Template: ComponentStory<typeof AppImage> = (args) => (
-	<AppImage {...args} />
+const Template: ComponentStory<typeof Popover> = (args) => (
+	<Popover {...args} />
 );
 
 export const Normal = Template.bind({});

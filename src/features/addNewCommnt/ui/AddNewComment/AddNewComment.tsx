@@ -18,7 +18,7 @@ import {
 	DynamicModuleLoader,
 	ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { HStack } from '@/shared/ui/deprecated/stack';
+import { HStack } from '@/shared/ui/redesigned/stack';
 
 export interface addNewCommentProps {
 	className?: string;

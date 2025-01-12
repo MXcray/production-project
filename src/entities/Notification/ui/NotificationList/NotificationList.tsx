@@ -2,7 +2,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './NotificationList.module.scss';
 import { memo } from 'react';
 import { useNotifications } from '../../api/notificationApi';
-import { VStack } from '@/shared/ui/deprecated/stack';
+import { VStack } from '@/shared/ui/redesigned/stack';
 import { NotificationItem } from '../NotificationItem/NotificationItem';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 

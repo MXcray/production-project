@@ -10,7 +10,7 @@ import { ToggleFeatures } from '@/shared/lib/features';
 import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
 import { AppLink, AppLinkTheme } from '@/shared/ui/deprecated/AppLink';
 import { getRouteArticleCreate } from '@/shared/const/router';
-import { HStack } from '@/shared/ui/deprecated/stack';
+import { HStack } from '@/shared/ui/redesigned/stack';
 import { NotificationButton } from '@/features/NotificationButton';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
 
