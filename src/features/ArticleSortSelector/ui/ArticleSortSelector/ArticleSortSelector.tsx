@@ -5,6 +5,10 @@ import { memo, useMemo } from 'react';
 import { Select, SelectOption } from '@/shared/ui/deprecated/Select';
 import { SortOrder } from '@/shared/types/sort';
 import { ArticleSortField } from '@/entities/Article';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { ListBox } from '@/shared/ui/redesigned/Popups';
+import { VStack } from '@/shared/ui/redesigned/stack';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 interface ArticleSortSelectorProps {
 	className?: string;
@@ -50,21 +54,55 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
 		[t],
 	);
 
+	const ArticleSortSelectorDeprecated = () => {
+		return (
+			<div className={classNames(cls.ArticleSortSelector, {}, [className])}>
+				<Select<ArticleSortField> //Явное указание (Необязательно)
+					options={sortFieldOptions}
+					label={t('Сортировать по')}
+					value={sort}
+					onChange={onChangeSort}
+				/>
+				<Select
+					options={orderOptions}
+					label={t('по')}
+					value={order}
+					onChange={onChangeOrder}
+					className={cls.order}
+				/>
+			</div>
+		);
+	};
+
+	const ArticleSortSelectorRedesigned = () => {
+		return (
+			<div
+				className={classNames(cls.ArticleSortSelectorRedesigned, {}, [
+					className,
+				])}
+			>
+				<VStack gap={'8'}>
+					<Text text={t('Сортировать по:')} />
+					<ListBox
+						items={sortFieldOptions}
+						value={sort}
+						onChange={onChangeSort}
+					/>
+					<ListBox
+						items={orderOptions}
+						value={order}
+						onChange={onChangeOrder}
+					/>
+				</VStack>
+			</div>
+		);
+	};
+
 	return (
-		<div className={classNames(cls.ArticleSortSelector, {}, [className])}>
-			<Select<ArticleSortField> //Явное указание (Необязательно)
-				options={sortFieldOptions}
-				label={t('Сортировать по')}
-				value={sort}
-				onChange={onChangeSort}
-			/>
-			<Select
-				options={orderOptions}
-				label={t('по')}
-				value={order}
-				onChange={onChangeOrder}
-				className={cls.order}
-			/>
-		</div>
+		<ToggleFeatures
+			feature={'isAppRedesigned'}
+			on={<ArticleSortSelectorRedesigned />}
+			off={<ArticleSortSelectorDeprecated />}
+		/>
 	);
 });

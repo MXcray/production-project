@@ -4,6 +4,7 @@ import { HTMLAttributes, memo, ReactNode } from 'react';
 
 export type CardVariant = 'normal' | 'outlined' | 'light';
 export type cardPadding = '0' | '8' | '16' | '24';
+export type cardBorder = 'round' | 'normal';
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
 	className?: string;
@@ -11,6 +12,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
 	variant?: CardVariant;
 	max?: boolean;
 	padding?: cardPadding;
+	border?: cardBorder;
 }
 
 const mapPaddingToClass: Record<cardPadding, string> = {
@@ -27,6 +29,7 @@ export const Card = memo((props: CardProps) => {
 		variant = 'normal',
 		max,
 		padding = '8',
+		border = 'normal',
 		...otherProps
 	} = props;
 
@@ -38,6 +41,7 @@ export const Card = memo((props: CardProps) => {
 				className,
 				cls[variant],
 				cls[paddingClass],
+				cls[border],
 			])}
 			{...otherProps}
 		>

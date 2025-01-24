@@ -16,6 +16,14 @@
 	background: none;
 }
 
+.filled {
+	background: var(--light-bg-redesigned);
+	border: none;
+	outline: none;
+	border-radius: 34px;
+	padding: 8px 16px;
+}
+
 .outline {
 	border: 1px solid var(--primary-color);
 	color: var(--primary-color);

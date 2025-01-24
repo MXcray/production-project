@@ -16,6 +16,10 @@ import { useSearchParams } from 'react-router-dom';
 import { ArticleInfiniteList } from '../../ui/ArticleInfiniteList/ArticleInfiniteList';
 import { useTranslation } from 'react-i18next';
 import { ArticlePageGreeting } from '@/features/articlePageGreeting';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
+import { ViewSelectorContainer } from '../ViewSelectorContainer/ViewSelectorContainer';
+import { FiltersContainer } from '../FiltersContainer/FiltersContainer';
 
 interface ArticlesPageProps {
 	className?: string;
@@ -38,17 +42,44 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
 		dispatch(initArticlesPage(searchParams));
 	});
 
+	const content = (
+		<ToggleFeatures
+			feature={'isAppRedesigned'}
+			on={
+				<StickyContentLayout
+					left={<ViewSelectorContainer />}
+					right={<FiltersContainer />}
+					content={
+						<Page
+							onScrollEnd={onLoadNextPart}
+							className={classNames(cls.ArticlesPageRedesigned, {}, [
+								className,
+							])}
+							data-testid={'ArticlesPage'}
+						>
+							<ArticleInfiniteList className={cls.list} />
+							<ArticlePageGreeting />
+						</Page>
+					}
+				/>
+			}
+			off={
+				<Page
+					onScrollEnd={onLoadNextPart}
+					className={classNames(cls.ArticlesPage, {}, [className])}
+					data-testid={'ArticlesPage'}
+				>
+					<ArticlePageFilters />
+					<ArticleInfiniteList className={cls.list} />
+					<ArticlePageGreeting />
+				</Page>
+			}
+		/>
+	);
+
 	return (
 		<DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-			<Page
-				onScrollEnd={onLoadNextPart}
-				className={classNames(cls.ArticlesPage, {}, [className])}
-				data-testid={'ArticlesPage'}
-			>
-				<ArticlePageFilters />
-				<ArticleInfiniteList className={cls.list} />
-				<ArticlePageGreeting />
-			</Page>
+			{content}
 		</DynamicModuleLoader>
 	);
 };
