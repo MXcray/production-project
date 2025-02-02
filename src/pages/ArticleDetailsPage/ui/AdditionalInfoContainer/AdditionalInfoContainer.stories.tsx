@@ -12,7 +12,7 @@ export default {
 } as ComponentMeta<typeof AdditionalInfoContainer>;
 
 const Template: ComponentStory<typeof AdditionalInfoContainer> = (args) => (
-	<AdditionalInfoContainer {...args} />
+	<AdditionalInfoContainer key={'123'} {...args} />
 );
 
 export const Normal = Template.bind({});
