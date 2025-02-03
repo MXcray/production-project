@@ -2,8 +2,11 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './AddNewComment.module.scss';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
-import { Input } from '@/shared/ui/deprecated/Input';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import { Input as InputDeprecated } from '@/shared/ui/deprecated/Input';
+import {
+	Button as ButtonDeprecated,
+	ButtonTheme,
+} from '@/shared/ui/deprecated/Button';
 import { useSelector } from 'react-redux';
 import {
 	getAddNewCommentError,
@@ -19,6 +22,10 @@ import {
 	ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { HStack } from '@/shared/ui/redesigned/stack';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Input } from '@/shared/ui/redesigned/Input';
+import { Button } from '@/shared/ui/redesigned/Button';
+import { Card } from '@/shared/ui/redesigned/Card';
 
 export interface addNewCommentProps {
 	className?: string;
@@ -50,27 +57,60 @@ const addNewComment = memo((props: addNewCommentProps) => {
 
 	return (
 		<DynamicModuleLoader reducers={reducers}>
-			<HStack
-				justify={'between'}
-				max
-				className={classNames(cls.addNewComment, {}, [className])}
-				data-testid={'AddNewComment'}
-			>
-				<Input
-					className={cls.input}
-					placeholder={t('Введите текст коментария')}
-					value={text}
-					onChange={onCommentTextChange}
-					data-testid={'AddNewComment.Input'}
-				/>
-				<Button
-					theme={ButtonTheme.OUTLINE}
-					onClick={onSendHandler}
-					data-testid={'AddNewComment.Button'}
-				>
-					{t('Отправить')}
-				</Button>
-			</HStack>
+			<ToggleFeatures
+				feature={'isAppRedesigned'}
+				on={
+					<Card padding={'24'} border={'round'} max>
+						<HStack
+							justify={'between'}
+							max
+							gap={'16'}
+							className={classNames(cls.addNewCommentRedesigned, {}, [
+								className,
+							])}
+							data-testid={'AddNewComment'}
+						>
+							<Input
+								className={cls.input}
+								placeholder={t('Введите текст коментария')}
+								value={text}
+								onChange={onCommentTextChange}
+								data-testid={'AddNewComment.Input'}
+							/>
+							<Button
+								variant={'outline'}
+								onClick={onSendHandler}
+								data-testid={'AddNewComment.Button'}
+							>
+								{t('Отправить')}
+							</Button>
+						</HStack>
+					</Card>
+				}
+				off={
+					<HStack
+						justify={'between'}
+						max
+						className={classNames(cls.addNewComment, {}, [className])}
+						data-testid={'AddNewComment'}
+					>
+						<InputDeprecated
+							className={cls.input}
+							placeholder={t('Введите текст коментария')}
+							value={text}
+							onChange={onCommentTextChange}
+							data-testid={'AddNewComment.Input'}
+						/>
+						<ButtonDeprecated
+							theme={ButtonTheme.OUTLINE}
+							onClick={onSendHandler}
+							data-testid={'AddNewComment.Button'}
+						>
+							{t('Отправить')}
+						</ButtonDeprecated>
+					</HStack>
+				}
+			/>
 		</DynamicModuleLoader>
 	);
 });

@@ -1,19 +1,33 @@
 .StarRating {
 	display: flex;
+	gap: 5px;
+
+	.hovered {
+		fill: var(--primary-color);
+	}
 }
 
-.StarIcon {
-	cursor: pointer;
+.StarRatingRedesigned {
+	display: flex;
+	gap: 5px;
+
+	.normal {
+		fill: none;
+	}
+
+	.hovered {
+		fill: var(--icon-redesigned);
+	}
 }
 
 .normal {
 	fill: none;
 }
 
-.hovered {
-	fill: var(--primary-color);
-}
-
 .selected {
 	cursor: auto;
+}
+
+.StarIcon {
+	cursor: pointer;
 }
