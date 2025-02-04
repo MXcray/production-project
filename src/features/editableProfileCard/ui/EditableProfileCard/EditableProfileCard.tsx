@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
-import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
+import { Text as TextDeprecated, TextTheme } from '@/shared/ui/deprecated/Text';
 import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
@@ -22,6 +22,8 @@ import {
 import { EditableProfileCardHeader } from '../../ui/EditableProfileCardHeader/EditableProfileCardHeader';
 import { VStack } from '@/shared/ui/redesigned/stack';
 import { ValidateProfileErrors } from '../../model/consts/consts';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 interface EditableProfileCardProps {
 	className?: string;
@@ -119,14 +121,30 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 			<VStack gap={'8'} max className={classNames('', {}, [className])}>
 				<EditableProfileCardHeader />
 				{validateErrors?.length &&
-					validateErrors.map((err: ValidateProfileErrors) => (
-						<Text
-							theme={TextTheme.ERROR}
-							text={validateErrorTranslates[err]}
-							key={err}
-							data-testid={'EditableProfileCard.Error'}
-						/>
-					))}
+					validateErrors.map((err: ValidateProfileErrors) => {
+						return (
+							<ToggleFeatures
+								feature={'isAppRedesigned'}
+								on={
+									<Text
+										variant={'error'}
+										bold
+										text={validateErrorTranslates[err]}
+										key={err}
+										data-testid={'EditableProfileCard.Error'}
+									/>
+								}
+								off={
+									<TextDeprecated
+										theme={TextTheme.ERROR}
+										text={validateErrorTranslates[err]}
+										key={err}
+										data-testid={'EditableProfileCard.Error'}
+									/>
+								}
+							/>
+						);
+					})}
 				<ProfileCard
 					data={formData}
 					isLoading={isLoading}
