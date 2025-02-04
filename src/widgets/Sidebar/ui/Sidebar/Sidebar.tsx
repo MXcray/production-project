@@ -1,8 +1,7 @@
 import React, { memo, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
-import { useSelector } from 'react-redux';
-import { getSidebarItems } from '../../model/selectors/getSidebarItems';
+import { useSidebarItems } from '../../model/selectors/getSidebarItems';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/deprecated/Button';
@@ -22,7 +21,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
 	const { t } = useTranslation();
 
 	const [collapsed, setCollapsed] = useState(false);
-	const sidebarItemsList = useSelector(getSidebarItems);
+	const sidebarItemsList = useSidebarItems();
 	const onCollapsed = () => {
 		setCollapsed((prev) => !prev);
 	};
