@@ -1,5 +1,4 @@
 import React, { memo, useMemo, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { useSidebarItems } from '../../model/selectors/getSidebarItems';
 import { ToggleFeatures } from '@/shared/lib/features';
@@ -18,8 +17,6 @@ interface SidebarProps {
 }
 
 export const Sidebar = memo(({ className }: SidebarProps) => {
-	const { t } = useTranslation();
-
 	const [collapsed, setCollapsed] = useState(false);
 	const sidebarItemsList = useSidebarItems();
 	const onCollapsed = () => {

@@ -14,6 +14,7 @@ export default {
 	},
 } as ComponentMeta<typeof Sidebar>;
 
+/* eslint-disable react/jsx-props-no-spreading */
 const Template: ComponentStory<typeof Sidebar> = (args) => (
 	<Sidebar {...args} />
 );

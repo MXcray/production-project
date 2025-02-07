@@ -2,7 +2,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppRouter } from './providers/router';
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
-import { Suspense, useEffect } from 'react';
+import { memo, Suspense, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { getUserInited } from '@/entities/User';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
@@ -12,9 +12,10 @@ import { PageLoader } from '@/widgets/PageLoader';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { MainLayout } from '@/shared/layouts/MainLayout';
 import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
-import { useAppToolbar } from '@/app/lib/useAppToolbar';
+import { useAppToolbar } from './lib/useAppToolbar';
+import { withTheme } from './providers/ThemeProvider/ui/withTheme';
 
-const App = () => {
+const App = memo(() => {
 	const { theme } = useTheme();
 	const dispatch = useAppDispatch();
 	const inited = useSelector(getUserInited);
@@ -68,18 +69,6 @@ const App = () => {
 			}
 		/>
 	);
+});
 
-	// return (
-	// 	<div className={classNames('app', {}, [variant])}>
-	// 		<Suspense fallback={''}>
-	// 			<Navbar className={'navbar'} />
-	// 			<div className={'content-page'}>
-	// 				<Sidebar />
-	// 				{inited && <AppRouter />}
-	// 			</div>
-	// 		</Suspense>
-	// 	</div>
-	// );
-};
-
-export default App;
+export default withTheme(App);

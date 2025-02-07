@@ -12,6 +12,7 @@ export default {
 } as ComponentMeta<typeof ScrollToolbar>;
 
 const Template: ComponentStory<typeof ScrollToolbar> = (args) => (
+	/* eslint-disable react/jsx-props-no-spreading */
 	<ScrollToolbar {...args} />
 );
 
