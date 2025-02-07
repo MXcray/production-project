@@ -2,7 +2,7 @@
 	min-height: 100vh;
 	display: grid;
 	grid-template-areas: 'sidebar content rightbar';
-	grid-template-columns: min-content 1fr 175px;
+	grid-template-columns: min-content 1fr 100px;
 }
 
 .sidebar {
@@ -39,4 +39,5 @@
 
 .toolbar {
 	height: 100%;
+	width: 100%;
 }
